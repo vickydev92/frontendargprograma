@@ -7,3 +7,21 @@
 img{
     width: 50px;
 }
+.BarraLateral{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 200px;
+    height: 100vh;
+}
+#cuerpo{
+    background-color: aquamarine;
+}
+body.container{
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+}
