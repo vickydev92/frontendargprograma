@@ -50,6 +50,10 @@ height: 300px;
     background-size: contain ;
 }
 
+li{
+    list-style-type: none;
+}
+
 @media (min-widht: 1200px){
     .Inicio{
         display: flex;
