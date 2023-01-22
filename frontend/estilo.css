@@ -1,0 +1,61 @@
+img{
+    width: 50px;
+}
+
+body.container{
+    display: flex;
+    margin-top: 0;
+    justify-content: center;
+}
+
+.Ventana{
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+}
+.Inicio{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+#portada {
+    width: 100%;
+    height: 40%;
+}
+.Inicio button img{
+    width: 30px;
+}
+
+.card img.Portada{
+width: 100%;
+height: 300px;
+}
+
+#Nombre {
+     font-size: 2em;
+     font-weight: 900;
+     font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.cabecera{
+    background-image: url("img/FOTOPORFOLIOVICKY.webp");
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 100%;
+    background-position: center;
+    background-size: contain ;
+}
+
+li{
+    list-style-type: none;
+}
+
+@media (min-widht: 1200px){
+    .Inicio{
+        display: flex;
+    }
+} 
