@@ -14,14 +14,6 @@ body.container{
     width: 100%;
     padding: 5%;
 }
-.Inicio{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    
-}
 
 #portada {
     width: 100%;
@@ -60,3 +52,10 @@ li{
         display: flex;
     }
 } 
+
+body{
+    background-image: url(https://wallpapercave.com/wp/wp2037124.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
