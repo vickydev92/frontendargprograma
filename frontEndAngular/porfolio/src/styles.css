@@ -54,8 +54,16 @@ li{
 } 
 
 body{
-    background-image: url(https://wallpapercave.com/wp/wp2037124.png);
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-formas-geometricas-planas_23-2148376161.jpg?w=2000);
+    /*https://wallpapercave.com/wp/wp2037124.png*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    
+    padding: 5%;
+}
+
+#Inicio{
+    box-shadow: 10px 1px 30px black;
+    border: solid 3px rgb(39, 39, 39);
 }
