@@ -45,11 +45,13 @@ height: 300px;
 
 li{
     list-style-type: none;
+    padding: 0.5rem;
 }
 
-@media (min-widht: 1200px){
-    .Inicio{
-        display: flex;
+
+@media (max-width: 700px){
+    .Ventana{
+        margin-top: 2rem;
     }
 } 
 
@@ -66,4 +68,8 @@ body{
 #Inicio{
     box-shadow: 10px 1px 30px black;
     border: solid 3px rgb(39, 39, 39);
+    margin-bottom: 4.5rem!important;
+}
+.card-body{
+    padding: 2rem;
 }
