@@ -7,3 +7,15 @@
 #offcanvasDarkNavbarLabel{
     color: aliceblue;
 }
+a span{
+    font-size: 14px;
+}
+i{
+    color: aliceblue;
+}
+.login{
+    background-color: rgb(71, 132, 245);
+}
+button i{
+    background-color: none;
+}
