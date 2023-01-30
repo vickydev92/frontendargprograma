@@ -35,12 +35,13 @@ height: 300px;
 }
 
 .cabecera{
-    background-image: url("./assets/img/FOTOPORFOLIOVICKY.webp");
+    background-image: url("https://img.freepik.com/vector-gratis/programador-trabajando-codigo-desarrollo-web-ingeniero-programacion-script-python-php-java-computadora_90220-249.jpg?w=2000");
     background-repeat: no-repeat;
-    height: 250px;
+    height: 300px;
     width: 100%;
     background-position: center;
     background-size: contain ;
+    padding: 10rem;
 }
 
 li{
