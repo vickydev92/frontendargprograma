@@ -4,13 +4,39 @@
     </div>
     <div class="card-body">
       <h1 class="card-title text-center" id="Nombre"> Victoria Camblor</h1>
+      <h3 class="card-title text-center">Full Stack Devoloper Jr.</h3>
       <ul class="card-text m-3">
         <li>
-            <h2>Acerca de</h2>
+            <h2>Acerca de  
+              <a type="" class="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class="bi bi-pencil"></i>
+              </a>
+            </h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, provident.</p>
         </li>
     </ul>
-      <a href="#Nombre" class="btn btn-sm d-flex justify-content-center"><img class="sm" src="../../../assets/img/flecha-hacia-abajo-para-navegar.png"
-        alt=""></a>
+      <a href="#Nombre" class="btn btn-sm d-flex justify-content-center">
+        <i class="bi bi-chevron-compact-down"></i>
+      </a>
     </div>
+</div>
+
+<!--Modal-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar acerca de</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="text">descripción</label>
+        <input type="text" placeholder="escribir texto aquí">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
 </div>
