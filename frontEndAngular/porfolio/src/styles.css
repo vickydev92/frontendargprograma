@@ -81,3 +81,20 @@ a i{
 h2 a i{
     font-size: smaller;
 }
+
+.lapiz{
+    font-size: large;
+}
+#col-btn{
+    display: flex;
+    justify-content: right;
+}
+
+#col-titulo{
+    display: flex;
+    justify-content: center;
+}
+#btn-edicion{
+    font-size: 1.5rem;
+    padding: 2px
+}
