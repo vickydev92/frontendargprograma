@@ -10,7 +10,7 @@
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Porfolio</h5>
                 <img src="../../../assets/img/usuario.png" alt="usuario"> 
-                <i class="bi bi-pencil lapiz" id="btn-edicion"data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i>
+                <i class="bi bi-pencil lapiz" id="btn-edicion"data-bs-toggle="modal" data-bs-target="#editarfoto"></i>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
@@ -32,7 +32,7 @@
                         <a class="nav-link" href="#proy">Proyectos</a>
                     </li>
                     <li>
-                        <button type="button" class="btn login"><i>Iniciar sesión</i></button>
+                        <button type="button" class="btn login" data-bs-toggle="modal" data-bs-target="#modallogin"><i>Iniciar sesión</i></button>
                         <button type="button" class="btn login"><i>Cerrar sesión</i></button>
                     </li>
                     <li>
@@ -43,9 +43,28 @@
                     </li>
                     
                 </ul>
-
-
             </div>
         </div>
     </div>
 </nav>
+
+<!--Modal de edicion-->
+<div class="modal fade" id="editarfoto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Foto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="text">descripción</label>
+        <input type="text" placeholder="escribir texto aquí">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
