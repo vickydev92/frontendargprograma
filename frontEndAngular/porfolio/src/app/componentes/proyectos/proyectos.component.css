@@ -11,7 +11,7 @@
 button {
     display: inline-block;
     padding: 8px 22px;
-    border: 2px solid #32d2ee91;
+    border: 2px solid #dd8efcbb;
     border-radius: 4px;
     transition: all 0.2s ease-in;
     position: relative;
@@ -45,7 +45,7 @@ button {
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: #39bda7;
+    background-color: #d078e6;
     border-radius: 50%;
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -54,18 +54,18 @@ button {
    
    button:hover {
     color: #ffffff;
-    border: 1px solid #39bda7;
+    border: 1px solid #252727;
    }
    
    button:hover:before {
     top: -35%;
-    background-color: #39bda7;
+    background-color: #1b1b1b;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
    }
    
    button:hover:after {
     top: -45%;
-    background-color: #39bda7;
+    background-color: #1d1e1f;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
    }
 
