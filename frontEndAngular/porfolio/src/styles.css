@@ -10,6 +10,7 @@ body.container{
 }
 
 .Ventana{
+         
     height: 300px;
     width: 100%;
     padding: 5% 20%;
@@ -45,6 +46,7 @@ height: 300px;
     padding: 7rem;
 }
 
+
 li{
     list-style-type: none;
     padding: 0.5rem;
@@ -69,6 +71,7 @@ body{
     
     padding: 0;
     height: 100vh;
+    
 }
 
 #Inicio{
