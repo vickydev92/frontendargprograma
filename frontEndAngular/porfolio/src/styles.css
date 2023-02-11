@@ -84,15 +84,13 @@ body{
 }
 
 a i{
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 h2 a i{
-    font-size: smaller;
+    font-size: 1rem;
 }
 
-.lapiz{
-    font-size: large;
-}
+
 #col-btn{
     display: flex;
     justify-content: right;
@@ -103,6 +101,6 @@ h2 a i{
     justify-content: center;
 }
 #btn-edicion{
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 2px
 }
