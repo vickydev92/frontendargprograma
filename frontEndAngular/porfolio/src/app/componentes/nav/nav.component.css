@@ -19,3 +19,6 @@ i{
 button i{
     background-color: none;
 }
+#iniciar{
+    display: block;
+}

@@ -10,7 +10,7 @@
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Porfolio</h5>
                 <img src="../../../assets/img/usuario.png" alt="usuario"> 
-                <i class="bi bi-pencil lapiz" id="btn-edicion"data-bs-toggle="modal" data-bs-target="#editarfoto"></i>
+                <i class="bi bi-pencil lapiz btn-edicion hide-element"  *ngIf="generalService.vistabtn" data-bs-toggle="modal" data-bs-target="#editarfoto"></i>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
@@ -33,8 +33,8 @@
                         <a class="nav-link" data-bs-dismiss="offcanvas" routerLink="proyectos">Proyectos</a>
                     </li>
                     <li>
-                        <button type="button" class="btn login" data-bs-toggle="modal" data-bs-target="#modallogin"><i>Iniciar sesión</i></button>
-                        <button type="button" class="btn login"><i>Cerrar sesión</i></button>
+                        <button type="button" class="btn login" id="iniciar" data-bs-dismiss="offcanvas" routerLink="iniciar-sesion"><i>Iniciar sesión</i></button>
+                        <button type="button" class="btn login hide-element" data-bs-dismiss="offcanvas" *ngIf="generalService.vistabtn" (click)="cerrarSesion()"><i>Cerrar sesión</i></button>
                     </li>
                     <li>
                         <div class="btn-group" role="group" aria-label="Basic example">

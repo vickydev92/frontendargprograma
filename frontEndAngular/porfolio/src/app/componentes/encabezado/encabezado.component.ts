@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
+import { GeneralService } from 'src/app/general.service';
+
 
 @Component({
   selector: 'app-encabezado',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class EncabezadoComponent {
 
+  constructor(public generalService: GeneralService){
+  }
+  
 }

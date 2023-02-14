@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GeneralService } from 'src/app/general.service';
 
 
 @Component({
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
+  constructor( public generalService: GeneralService){}
   
 }
