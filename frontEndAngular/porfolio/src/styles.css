@@ -2,9 +2,6 @@
 img{
     width: 50px;
 }
-#log, #l-enc, #l-edu, #l-exp, #l-ski, #l-pro, #l-nav{
-    display: none;
-}
 
 body.container{
     display: flex;
@@ -103,7 +100,7 @@ h2 a i{
     display: flex;
     justify-content: center;
 }
-.btn-edicion{
+#btn-edicion{
     font-size: 1rem;
     padding: 2px
 }

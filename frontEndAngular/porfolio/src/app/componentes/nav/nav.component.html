@@ -59,12 +59,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <label for="text">descripción</label>
-        <input type="text" placeholder="escribir texto aquí">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">editar foto</span>
+            <input type="text" class="form-control" placeholder="Escribir link de foto" aria-label="Link de foto" aria-describedby="addon-wrapping">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        <button type="button" class="btn btn-primary" (click)="cambiarImagen()">Guardar cambios</button>
       </div>
     </div>
   </div>

@@ -17,5 +17,9 @@ export class NavComponent {
     (document.getElementById("iniciar") as HTMLElement).style.display = "block"; 
     this.ruta.navigate(['/'])
   }
+
+  cambiarImagen(){
+    console.log("cambio imagen")
+  }
 }
 
