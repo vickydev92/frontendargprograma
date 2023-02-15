@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/general.service';
+import { FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +9,18 @@ import { GeneralService } from 'src/app/general.service';
   styleUrls: ['./nav.component.css']
 })
 
-export class NavComponent {
+export class NavComponent implements OnInit {
+  public rutaImagen="../../../assets/img/usuario.png";
+  public formulario!: FormGroup;
 
-  constructor(private ruta : Router, public generalService: GeneralService){}
+  constructor(private ruta : Router, public generalService: GeneralService, private formBuilder:FormBuilder){
+    this.formulario= this.formBuilder.group ({
+      nuevaRutaImagen: ['']
+    });
+  }
+
+  ngOnInit(){
+  }
 
   cerrarSesion(){
     this.generalService.vistabtn = false;
@@ -19,7 +29,9 @@ export class NavComponent {
   }
 
   cambiarImagen(){
-    console.log("cambio imagen")
+    this.rutaImagen = this.formulario.value.nuevaRutaImagen;
+    this.formulario.reset () ;
+    
   }
 }
 

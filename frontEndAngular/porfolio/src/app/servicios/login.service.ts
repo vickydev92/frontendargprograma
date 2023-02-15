@@ -20,7 +20,7 @@ export class LoginService {
 
 
     if 
-    (formLogin.get('email')?.value === "victoria@gmail.com" && formLogin.get('password')?.value === "12345678")
+    (formLogin.get('email')?.value === "victoria@gmail.com" && formLogin.get('password')?.value === "argentinaprog22")
     {
       this.generalService.vistabtn = true;
       (document.getElementById("iniciar") as HTMLElement).style.display = "none"; 

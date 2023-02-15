@@ -22,3 +22,9 @@ button i{
 #iniciar{
     display: block;
 }
+.botonM{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2%;
+}

@@ -59,7 +59,7 @@ li{
         padding: 5% 5%;
         font-size: 14px;
     }
-    
+ 
 } 
 
 body{
@@ -68,6 +68,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    
     
     padding: 0;
     height: 100vh;

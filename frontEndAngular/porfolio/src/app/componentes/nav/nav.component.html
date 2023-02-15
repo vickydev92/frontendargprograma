@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark fixed-top" id="fondo">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Argentina Programa <span>#Yoprogramo</span> </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" 
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" style="color: rgb(250, 250, 250); font-size: smaller;"
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,7 +9,7 @@
             aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Porfolio</h5>
-                <img src="../../../assets/img/usuario.png" alt="usuario"> 
+                <img [src]="rutaImagen" alt="usuario"> 
                 <i class="bi bi-pencil lapiz btn-edicion hide-element"  *ngIf="generalService.vistabtn" data-bs-toggle="modal" data-bs-target="#editarfoto"></i>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
@@ -59,14 +59,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping">editar foto</span>
-            <input type="text" class="form-control" placeholder="Escribir link de foto" aria-label="Link de foto" aria-describedby="addon-wrapping">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="cambiarImagen()">Guardar cambios</button>
+        <form [formGroup]="formulario" (submit)="cambiarImagen()" >
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">editar foto</span>
+                <input type="text" class="form-control" placeholder="Escribir link de foto" aria-label="Link de foto" 
+                formControlName="nuevaRutaImagen" aria-describedby="addon-wrapping">
+            </div>   
+            <div class="botonM">
+                <button type="button" class="btn btn-secondary" style="margin-right: 2%;" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" >Guardar cambios</button>
+            </div>
+        </form> 
       </div>
     </div>
   </div>

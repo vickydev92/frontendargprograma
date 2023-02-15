@@ -11,7 +11,7 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { LoginComponent } from './componentes/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgCircleProgressModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
