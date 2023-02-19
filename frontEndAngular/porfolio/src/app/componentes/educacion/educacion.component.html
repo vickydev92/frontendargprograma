@@ -1,14 +1,14 @@
 <div class="card" style="width: 100%; height: max-content;" id="Inicio">
   <div class="card-body">
-    <div class="row justify-content-end">
+    <div class="row justify-content-start">
       <div class="col-4" id="col-titulo">
-        <h2 class="card-title text-center" id="Nombre">
+        <h2 class="card-title text-start" id="Nombre">
           Educación
         </h2>
       </div>
       <div class="col-4" id="col-btn">
         <!--boton de lapiz-->
-        <a type="" class=""  *ngIf="generalService.vistabtn" >
+        <a type="" class="" *ngIf="generalService.vistabtn">
           <i class="bi bi-pencil lapiz" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop0"></i>
           <i class="bi bi-trash3-fill" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"></i>
         </a>
@@ -18,111 +18,132 @@
       <div class="row row-cols-2">
         <div class="col">
           <li>
-            <img src="../../../assets/img/card-text.svg" alt="">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+            <div class="card-encabezado d-flex">
+              <img src="../../../assets/img/card-text.svg" alt="">
+              <h3>titulo</h3>
+            </div>
+            <div class="card-cuerpo">
+              <p>12/10 - 15/11</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+            </div>
           </li>
-        </div>
-        <div class="col">
-          <li>
-            <img src="../../../assets/img/card-text.svg" alt="">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-          </li>
-        </div>
-        <div class="col">
-          <li>
-            <img src="../../../assets/img/card-text.svg" alt="">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-          </li>
-        </div>
-        <div class="col">
-          <li>
-            <img src="../../../assets/img/card-text.svg" alt="">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-          </li>
-        </div>
-      </div>
-    </div>
-    <a routerLink="/experiencia" class="btn btn-sm d-flex justify-content-center">
-      <i class="bi bi-chevron-compact-down"></i>
-    </a>
-  </div>
-</div>
 
-<!--Modal de edicion-->
-<div class="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Educación</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="col">
+          <li>
+            <div class="card-encabezado d-flex">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Logo_de_la_Universidad_de_Buenos_Aires.jpg/479px-Logo_de_la_Universidad_de_Buenos_Aires.jpg" alt="">
+              <h3>titulo</h3>
+            </div>
+           <div class="card-cuerpo">
+            <p>12/10 - 15/11</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+           </div>
+          </li>
+        </div>
+        <div class="col">
+          <li>
+            <div class="card-encabezado d-flex">
+              <img src="../../../assets/img/card-text.svg" alt="">
+              <h3>titulo</h3>
+            </div>
+           <div class="card-cuerpo">
+            <p>12/10 - 15/11</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+           </div>
+          </li>
+        </div>
+        <div class="col">
+          <li>
+            <div class="card-encabezado d-flex">
+              <img src="../../../assets/img/card-text.svg" alt="">
+              <h3>titulo</h3>
+            </div>
+           <div class="card-cuerpo">
+            <p>12/10 - 15/11</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+           </div>
+          </li>
+        </div>
       </div>
-      <div class="modal-body">
-        <form action="">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>ID</option>
-            <option value="1">Uno</option>
-            <option value="2">Dos</option>
-            <option value="3">Tres</option>
-            <option value="4">Cuatro</option>
-          </select>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Icono</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Fecha de Inicio</label>
-            <input type="date" class="form-control" id="exampleFormControlInput1">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Fecha de finalizacion</label>
-            <input type="date" class="form-control" id="exampleFormControlInput1">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
-      </div>
+      <a routerLink="/experiencia" class="btn btn-sm d-flex justify-content-center">
+        <i class="bi bi-chevron-compact-down"></i>
+      </a>
     </div>
   </div>
-</div>
 
-<!--Modal para eliminar-->
-<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>ID</option>
-            <option value="1">Uno</option>
-            <option value="2">Dos</option>
-            <option value="3">Tres</option>
-            <option value="4">Cuatro</option>
-          </select>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+  <!--Modal de edicion-->
+  <div class="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Educación</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>ID</option>
+              <option value="1">Uno</option>
+              <option value="2">Dos</option>
+              <option value="3">Tres</option>
+              <option value="4">Cuatro</option>
+            </select>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Icono</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Fecha de Inicio</label>
+              <input type="date" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Fecha de finalizacion</label>
+              <input type="date" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!--Modal para eliminar-->
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>ID</option>
+              <option value="1">Uno</option>
+              <option value="2">Dos</option>
+              <option value="3">Tres</option>
+              <option value="4">Cuatro</option>
+            </select>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
