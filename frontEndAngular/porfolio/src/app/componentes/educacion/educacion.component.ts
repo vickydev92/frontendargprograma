@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GeneralService } from 'src/app/general.service';
 
 @Component({
@@ -7,8 +8,21 @@ import { GeneralService } from 'src/app/general.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent {
-  constructor(public generalService: GeneralService){
+  public formulario!: FormGroup;
 
+  constructor(public generalService: GeneralService, private formBuilder:FormBuilder){
+    this.formulario= this.formBuilder.group ({
+    id: ['',[Validators.required]],
+    titulo:['',[Validators.required]],
+    fechaDeInicio:['',[Validators.required]],
+    fechaDeFinal:['',[Validators.required]],
+    descripcion:['',[Validators.required]],
+    imagen:['',[Validators.required]]
+    });
+  }
+
+  editarEducacion(){
+    console.log(this.formulario.value)
   }
 
 }

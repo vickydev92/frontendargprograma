@@ -5,7 +5,7 @@
     flex-direction: column;
 }
 h3{
-    width: 40%;
+    width: 100%;
     text-align: start;
 }
 .col{
@@ -27,4 +27,9 @@ p{
 
 img{
     width: 15%;
+}
+@media (max-width: 400px) {
+    h3{
+        font-size: 1.5em;
+    }
 }

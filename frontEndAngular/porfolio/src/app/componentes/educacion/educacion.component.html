@@ -19,7 +19,7 @@
         <div class="col">
           <li>
             <div class="card-encabezado d-flex">
-              <img src="../../../assets/img/card-text.svg" alt="">
+              <img src="https://w7.pngwing.com/pngs/874/183/png-transparent-computer-icons-school-school.png" alt="">
               <h3>titulo</h3>
             </div>
             <div class="card-cuerpo">
@@ -32,13 +32,15 @@
         <div class="col">
           <li>
             <div class="card-encabezado d-flex">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Logo_de_la_Universidad_de_Buenos_Aires.jpg/479px-Logo_de_la_Universidad_de_Buenos_Aires.jpg" alt="">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Logo_de_la_Universidad_de_Buenos_Aires.jpg/479px-Logo_de_la_Universidad_de_Buenos_Aires.jpg"
+                alt="">
               <h3>titulo</h3>
             </div>
-           <div class="card-cuerpo">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-           </div>
+            <div class="card-cuerpo">
+              <p>12/10 - 15/11</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+            </div>
           </li>
         </div>
         <div class="col">
@@ -47,10 +49,10 @@
               <img src="../../../assets/img/card-text.svg" alt="">
               <h3>titulo</h3>
             </div>
-           <div class="card-cuerpo">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-           </div>
+            <div class="card-cuerpo">
+              <p>12/10 - 15/11</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+            </div>
           </li>
         </div>
         <div class="col">
@@ -59,10 +61,10 @@
               <img src="../../../assets/img/card-text.svg" alt="">
               <h3>titulo</h3>
             </div>
-           <div class="card-cuerpo">
-            <p>12/10 - 15/11</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-           </div>
+            <div class="card-cuerpo">
+              <p>12/10 - 15/11</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
+            </div>
           </li>
         </div>
       </div>
@@ -71,6 +73,7 @@
       </a>
     </div>
   </div>
+</div>
 
   <!--Modal de edicion-->
   <div class="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -82,8 +85,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="">
-            <select class="form-select" aria-label="Default select example">
+          <form [formGroup]="formulario" (submit)="editarEducacion()">
+            <select class="form-control"formControlName="id" aria-label="Default select example">
               <option selected>ID</option>
               <option value="1">Uno</option>
               <option value="2">Dos</option>
@@ -92,29 +95,29 @@
             </select>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Icono</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+              <input type="email" class="form-control"formControlName="imagen" id="exampleFormControlInput1" placeholder="">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+              <input type="email" class="form-control" formControlName="titulo" id="exampleFormControlInput1" placeholder="">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Fecha de Inicio</label>
-              <input type="date" class="form-control" id="exampleFormControlInput1">
+              <input type="date" class="form-control" formControlName="fechaDeInicio" id="exampleFormControlInput1">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Fecha de finalizacion</label>
-              <input type="date" class="form-control" id="exampleFormControlInput1">
+              <input type="date" class="form-control" formControlName="fechaDeFinal" id="exampleFormControlInput1">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+          </form>
         </div>
       </div>
     </div>
