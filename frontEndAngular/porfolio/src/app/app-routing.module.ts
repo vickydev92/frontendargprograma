@@ -7,6 +7,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { SkillsComponent } from './componentes/skills/skills.component';
 
+
 const routes: Routes = [
   {path: '', component: EncabezadoComponent},
   {path: 'encabezado', component: EncabezadoComponent},

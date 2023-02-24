@@ -99,8 +99,9 @@ h2 a i{
 
 #col-titulo{
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
+
 #btn-edicion{
     font-size: 1rem;
     padding: 2px
