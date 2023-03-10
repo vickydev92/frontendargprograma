@@ -28,3 +28,7 @@ button i{
     align-items: center;
     padding: 2%;
 }
+
+.perfil{
+    border-radius: 50%;
+}

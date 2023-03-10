@@ -2,6 +2,7 @@
     "persona": 
         [{
             "id": 1,
+            "imgPerfil":"https://avatars.githubusercontent.com/u/117937431?v=4",
             "nombre": "Victoria",
             "apellido": "Camblor",
             "estudios": "Full Stack Devoloper Jr",
@@ -63,9 +64,14 @@
     "proyectos": 
         [{
             "id":1,
-            "nombredeproyecto": "calculadora",
+            "nombre": "calculadora online",
             "descripcion": "lorem aosldsk akjsdjaskd askdjaksdja  kjaskdjaksdj aksjdaksjd  aksjdakjsd kajsdkajsd kajskjasdkj"
-        }]
+        },
+    {
+        "id":2,
+        "nombre":"tarjeta de producto",
+        "descripcion":"lorem aosldsk akjsdjaskd askdjaksdja  kjaskdjaksdj aksjdaksjd  aksjdakjsd kajsdkajsd kajskjasdkj" 
+    }]
     ,
     "experiencia":
         [{

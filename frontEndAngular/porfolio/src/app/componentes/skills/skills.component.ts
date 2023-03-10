@@ -11,6 +11,7 @@ import { GeneralService } from 'src/app/general.service';
 export class SkillsComponent {
 
   public formulario!: FormGroup;
+  skillsList:any;
   
   constructor( public generalService: GeneralService, private formBuilder: FormBuilder){
     this.formulario = this.formBuilder.group({
@@ -23,7 +24,13 @@ export class SkillsComponent {
 
   editarSkills() {
     console.log(this.formulario.value)
+  }
 
+  ngOnInit(): void{
+    this.generalService.obtenerInfo().subscribe(data =>{
+      console.log(data);
+      this.skillsList=data.skills;
+    });
   }
   
 }

@@ -8,5 +8,16 @@ import { GeneralService } from 'src/app/general.service';
 })
 export class ProyectosComponent {
   constructor(public generalService: GeneralService){}
+  proyectoList:any;
 
+
+  
+  ngOnInit(): void{
+    this.generalService.obtenerInfo().subscribe(data =>{
+      console.log(data);
+      this.proyectoList=data.proyectos;
+    });
+  }
 }
+
+

@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup} from '@angular/forms';
 export class NavComponent implements OnInit {
   public rutaImagen="../../../assets/img/usuario.png";
   public formulario!: FormGroup;
+  fotoPerfil:any
 
   constructor(private ruta : Router, public generalService: GeneralService, private formBuilder:FormBuilder){
     this.formulario= this.formBuilder.group ({
@@ -19,7 +20,11 @@ export class NavComponent implements OnInit {
     });
   }
 
-  ngOnInit(){
+  ngOnInit(): void{
+    this.generalService.obtenerInfo().subscribe(data =>{
+      console.log(data);
+      this.fotoPerfil=data.persona;
+    });
   }
 
   cerrarSesion(){

@@ -14,33 +14,15 @@
         </a>
       </div>
     </div>
-    <li>
-      <img src="" alt="">
-      <h3>titulo de skills</h3>
-      <p>porcentaje</p>
+    <!--Barra de progreso-->
+    <li *ngFor="let skills of skillsList" >
+      <img [src]="skills.imagen" alt="">
+      <h3>{{skills.nombre}}</h3>
+      <p>{{skills.porcentaje}}</p>
       <div class="progress">
         <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example"
-          style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          [style.width.%]="skills.porcentaje" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
-    </li>
-    <li>
-      <img src="" alt="">
-      <h3>titulo de skills</h3>
-      <p>porcentaje</p>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example"
-          style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    </li>
-    <li>
-      <img src="" alt="">
-      <h3>titulo de skills</h3>
-      <p>porcentaje</p>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example"
-          style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-
     </li>
     <a routerLink="/proyectos" class="btn btn-sm d-flex justify-content-center">
       <i class="bi bi-chevron-compact-down"></i>

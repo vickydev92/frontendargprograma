@@ -1,15 +1,17 @@
 <nav class="navbar navbar-dark fixed-top" id="fondo">
     <div class="container-fluid">
+        <!--BARRA DE NAVEGACION-->
         <a class="navbar-brand" href="#">Argentina Programa <span>#Yoprogramo</span> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" style="color: rgb(250, 250, 250); font-size: smaller;"
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!--BARRA DESPLEGABLE LATERAL-->
         <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
+            <div class="offcanvas-header" *ngFor="let persona of fotoPerfil" >
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Porfolio</h5>
-                <img [src]="rutaImagen" alt="usuario"> 
+                <img [src]="persona.imgPerfil" alt="usuario" class="perfil"> 
                 <i class="bi bi-pencil lapiz btn-edicion hide-element"  *ngIf="generalService.vistabtn" data-bs-toggle="modal" data-bs-target="#editarfoto"></i>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
