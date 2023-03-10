@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
 import { GeneralService } from 'src/app/general.service';
 
 
@@ -10,7 +9,15 @@ import { GeneralService } from 'src/app/general.service';
 })
 export class EncabezadoComponent {
 
+  miPorfolio:any;
   constructor(public generalService: GeneralService){
   }
+
+ngOnInit(): void{
+  this.generalService.obtenerInfo().subscribe(data =>{
+    console.log(data);
+    this.miPorfolio=data.persona;
+  });
+}
   
 }

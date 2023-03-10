@@ -1,5 +1,5 @@
 <!--tarjeta experiencia-->
-<div class="card" style="width: 100%; height: max-content;" id="Inicio">
+<div class="card" style="width: 100%; height: max-content;" id="Inicio" >
   <div class="card-body">
     <!--cabecera de la tarjeta-->
     <div class="row justify-content-start">
@@ -20,11 +20,11 @@
     <div class="container text-center">
       <div class="row row-cols-2">
         <!--columna1-->
-        <div class="col">
+        <div class="col" *ngFor="let educacion of educacionList">
           <li name="caja-1">
             <div class="card-encabezado d-flex">
-              <img src="https://w7.pngwing.com/pngs/874/183/png-transparent-computer-icons-school-school.png" alt="">
-              <h3>titulo</h3>
+              <img [src]="educacion.imagen" alt="">
+              <h3>{{educacion.titulo}}</h3>
             </div>
             <div class="card-cuerpo">
               <p>12/10 - 15/11</p>
@@ -32,47 +32,7 @@
             </div>
           </li>
         </div>
-        <!--columna2-->
-        <div class="col">
-          <li name="caja-2">
-            <div class="card-encabezado d-flex">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Logo_de_la_Universidad_de_Buenos_Aires.jpg/479px-Logo_de_la_Universidad_de_Buenos_Aires.jpg"
-                alt="">
-              <h3>titulo</h3>
-            </div>
-            <div class="card-cuerpo">
-              <p>12/10 - 15/11</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-            </div>
-          </li>
-        </div>
-        <!--columna3-->
-        <div class="col">
-          <li name="caja-3">
-            <div class="card-encabezado d-flex">
-              <img src="../../../assets/img/card-text.svg" alt="">
-              <h3>titulo</h3>
-            </div>
-            <div class="card-cuerpo">
-              <p>12/10 - 15/11</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-            </div>
-          </li>
-        </div>
-        <!--columna4-->
-        <div class="col">
-          <li name="caja-4">
-            <div class="card-encabezado d-flex">
-              <img src="../../../assets/img/card-text.svg" alt="">
-              <h3>titulo</h3>
-            </div>
-            <div class="card-cuerpo">
-              <p>12/10 - 15/11</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, consequuntur.</p>
-            </div>
-          </li>
-        </div>
+       
       </div>
       <!--pie de la tarjeta flecha para abajo-->
       <a routerLink="/experiencia" class="btn btn-sm d-flex justify-content-center">
@@ -92,7 +52,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="formulario" (submit)="editarEducacion()">
+        <form [formGroup]="formulario">
           <select class="form-control" formControlName="id" aria-label="Default select example">
             <option selected>ID</option>
             <option value="1">Uno</option>

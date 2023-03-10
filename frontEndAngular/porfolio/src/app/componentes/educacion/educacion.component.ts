@@ -11,8 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EducacionComponent {
   public formulario!: FormGroup;
-  dbjson!:string[];
-  public culo: any;
+  educacionList:any;
 
   constructor(public generalService: GeneralService, private formBuilder: FormBuilder, private http: HttpClient) {
     this.formulario = this.formBuilder.group({
@@ -25,30 +24,11 @@ export class EducacionComponent {
     });
   }
 
-  editarEducacion() {
-    console.log(this.formulario.value)
-    
-    this.culo.splice(this.formulario.value);
-    this.guardarDatos();
-  }
-  ngOnInit() {
-    this.http.get<string[]>('./assets/db.json').subscribe(data => {
+  ngOnInit(): void{
+    this.generalService.obtenerInfo().subscribe(data =>{
       console.log(data);
-       this.culo = data;
+      this.educacionList=data.educacion;
     });
-  }
-
-  guardarDatos() {
-    // Convertir el objeto FormGroup a formato JSON
-    const json = JSON.stringify(this.formulario.value);
-
-
-    // Escribir los valores en un archivo JSON existente utilizando HttpClient
-    this.http.put(this.culo, json)
-      .subscribe(
-        response => console.log('Los datos han sido escritos en el archivo JSON'),
-        error => console.error('Error al escribir los datos en el archivo JSON:', error)
-      );
   }
 
 

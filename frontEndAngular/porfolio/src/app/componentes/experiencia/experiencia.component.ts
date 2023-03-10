@@ -9,7 +9,7 @@ import { GeneralService } from 'src/app/general.service';
 })
 
 export class ExperienciaComponent {
-
+  experienciaList: any;
 
   public formulario!: FormGroup;
 
@@ -31,7 +31,10 @@ export class ExperienciaComponent {
 
   }
 
-  ngOnInit(){
-    
+  ngOnInit(): void{
+    this.generalService.obtenerInfo().subscribe(data =>{
+      console.log(data);
+      this.experienciaList=data.experiencia;
+    });
   }
 }
