@@ -27,9 +27,9 @@ export class SkillsComponent {
   }
 
   ngOnInit(): void{
-    this.generalService.obtenerInfo().subscribe(data =>{
+    this.generalService.obtenerInfoSkills().subscribe(data =>{
       console.log(data);
-      this.skillsList=data.skills;
+      this.skillsList=data;
     });
   }
   

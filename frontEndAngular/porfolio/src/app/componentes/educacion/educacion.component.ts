@@ -25,9 +25,9 @@ export class EducacionComponent {
   }
 
   ngOnInit(): void{
-    this.generalService.obtenerInfo().subscribe(data =>{
+    this.generalService.obtenerInfoEdu().subscribe(data =>{
       console.log(data);
-      this.educacionList=data.educacion;
+      this.educacionList=data;
     });
   }
 

@@ -13,9 +13,9 @@ export class ProyectosComponent {
 
   
   ngOnInit(): void{
-    this.generalService.obtenerInfo().subscribe(data =>{
+    this.generalService.obtenerInfoProy().subscribe(data =>{
       console.log(data);
-      this.proyectoList=data.proyectos;
+      this.proyectoList=data;
     });
   }
 }

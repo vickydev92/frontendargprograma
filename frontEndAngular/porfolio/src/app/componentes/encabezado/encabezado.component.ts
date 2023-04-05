@@ -15,8 +15,8 @@ export class EncabezadoComponent {
 
 ngOnInit(): void{
   this.generalService.obtenerInfo().subscribe(data =>{
-    console.log(data);
-    this.miPorfolio=data.persona;
+    console.log(data[0]);
+    this.miPorfolio=data[0];
   });
 }
   

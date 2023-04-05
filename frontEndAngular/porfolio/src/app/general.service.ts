@@ -12,9 +12,25 @@ export class GeneralService {
 
 
 public obtenerInfo(): Observable<any>{
-  return this.http.get("./assets/db.json")
+  return this.http.get("http://localhost:8080/api/personas")
 
 }
 
+public obtenerInfoEdu(): Observable<any>{
+  return this.http.get("http://localhost:8080/api/educacion")
+  
+}
+public obtenerInfoExp(): Observable<any>{
+  return this.http.get("http://localhost:8080/api/experiencia")
+
+}
+public obtenerInfoSkills(): Observable<any>{
+  return this.http.get("http://localhost:8080/api/skills")
+
+}
+public obtenerInfoProy(): Observable<any>{
+  return this.http.get("http://localhost:8080/api/proyectos")
+
+}
 
 }

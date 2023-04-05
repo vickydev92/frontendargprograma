@@ -20,10 +20,10 @@
       <div class="row row-cols-2">
         <div class="col"  *ngFor="let proyectos of proyectoList" >
           <li>
-            <h3>{{proyectos.nombre}}</h3>
+            <h3>{{proyectos.titulo}}</h3>
             <p>{{proyectos.descripcion}}</p>
-            <button class="btn-bd-primary">Ver más</button>
-            <img src="" alt="">
+            <button class="btn-bd-primary"><a [href]="proyectos.enlace" target="_blank" rel="noreferrer noopener">Ver más</a></button>
+            <img [src]="proyectos.imagen" alt="">
           </li>
         </div>
       </div>

@@ -32,9 +32,9 @@ export class ExperienciaComponent {
   }
 
   ngOnInit(): void{
-    this.generalService.obtenerInfo().subscribe(data =>{
+    this.generalService.obtenerInfoExp().subscribe(data =>{
       console.log(data);
-      this.experienciaList=data.experiencia;
+      this.experienciaList=data;
     });
   }
 }
