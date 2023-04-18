@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralService } from 'src/app/general.service';
 
 @Component({
@@ -7,7 +8,19 @@ import { GeneralService } from 'src/app/general.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent {
-  constructor(public generalService: GeneralService){}
+
+  public formulario!: FormGroup;
+  constructor(public generalService: GeneralService, public formBuilder:FormBuilder){
+    this.formulario = this.formBuilder.group({
+      id: ['', [Validators.required]],
+      titulo: ['', [Validators.required]],
+      fechaDeInicio: ['', [Validators.required]],
+      fechaDeFinal: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
+      imagen: ['', [Validators.required]]
+    });
+    
+  }
   proyectoList:any;
 
 

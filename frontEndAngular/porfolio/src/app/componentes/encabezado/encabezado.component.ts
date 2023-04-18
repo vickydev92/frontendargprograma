@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralService } from 'src/app/general.service';
 
 
@@ -9,8 +10,18 @@ import { GeneralService } from 'src/app/general.service';
 })
 export class EncabezadoComponent {
 
+  public formulario!: FormGroup;
   miPorfolio:any;
-  constructor(public generalService: GeneralService){
+  constructor(public generalService: GeneralService, public formBuilder: FormBuilder){
+    this.formulario = this.formBuilder.group({
+      nombre: ['', [Validators.required]],
+      apellido: ['', [Validators.required]],
+      titulo: ['', [Validators.required]],
+      localidad: ['', [Validators.required]],
+      fotoPerfil: ['', [Validators.required]],
+      banner: ['', [Validators.required]],
+      acercaDe: ['', [Validators.required]]
+    });
   }
 
 ngOnInit(): void{

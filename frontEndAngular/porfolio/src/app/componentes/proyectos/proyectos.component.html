@@ -11,7 +11,8 @@
         <!--boton de lapiz-->
         <a type="" class=""  *ngIf="generalService.vistabtn" >
           <i class="bi bi-pencil lapiz" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#editarpro"></i>
-          <i class="bi bi-trash3-fill" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#eliminarpro"></i>
+          <i class="bi bi-trash2" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#eliminarpro"></i>
+          <i class="bi bi-plus" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#agregarpro"></i>
         </a>
       </div>
     </div>
@@ -41,16 +42,46 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Proyectos</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Educación</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <label for="text">descripción</label>
-        <input type="text" placeholder="escribir texto aquí">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        <form [formGroup]="formulario">
+          <select class="form-control" formControlName="id" aria-label="Default select example">
+            <option selected>ID</option>
+            <option value="1">Uno</option>
+            <option value="2">Dos</option>
+            <option value="3">Tres</option>
+            <option value="4">Cuatro</option>
+          </select>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Icono</label>
+            <input type="email" class="form-control" formControlName="imagen" id="exampleFormControlInput1"
+              placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+            <input type="email" class="form-control" formControlName="titulo" id="exampleFormControlInput1"
+              placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Fecha de Inicio</label>
+            <input type="date" class="form-control" formControlName="fechaDeInicio" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Fecha de finalizacion</label>
+            <input type="date" class="form-control" formControlName="fechaDeFinal" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+            <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1"
+              rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -78,6 +109,50 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal de agregar-->
+<div class="modal fade" id="agregarpro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar Proyecto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formulario">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Icono</label>
+            <input type="email" class="form-control" formControlName="imagen" id="exampleFormControlInput1"
+              placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+            <input type="email" class="form-control" formControlName="titulo" id="exampleFormControlInput1"
+              placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Fecha de Inicio</label>
+            <input type="date" class="form-control" formControlName="fechaDeInicio" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Fecha de finalizacion</label>
+            <input type="date" class="form-control" formControlName="fechaDeFinal" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+            <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1"
+              rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
