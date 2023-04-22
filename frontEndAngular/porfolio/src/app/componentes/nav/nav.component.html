@@ -9,10 +9,9 @@
         <!--BARRA DESPLEGABLE LATERAL-->
         <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header" *ngFor="let persona of fotoPerfil" >
+            <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Porfolio</h5>
-                <img [src]="persona.imgPerfil" alt="usuario" class="perfil"> 
-                <i class="bi bi-pencil lapiz btn-edicion hide-element"  *ngIf="generalService.vistabtn" data-bs-toggle="modal" data-bs-target="#editarfoto"></i>
+                <img [src]="fotoPerfil.fotoPerfil" alt="usuario" class="perfil"> 
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
@@ -50,29 +49,3 @@
         </div>
     </div>
 </nav>
-
-<!--Modal de edicion-->
-<div class="modal fade" id="editarfoto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Foto</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formulario" (submit)="cambiarImagen()" >
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">editar foto</span>
-                <input type="text" class="form-control" placeholder="Escribir link de foto" aria-label="Link de foto" 
-                formControlName="nuevaRutaImagen" aria-describedby="addon-wrapping">
-            </div>   
-            <div class="botonM">
-                <button type="button" class="btn btn-secondary" style="margin-right: 2%;" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" >Guardar cambios</button>
-            </div>
-        </form> 
-      </div>
-    </div>
-  </div>
-</div>

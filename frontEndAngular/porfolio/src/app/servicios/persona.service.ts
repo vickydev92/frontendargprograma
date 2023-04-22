@@ -1,22 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Persona } from '../modelos/usuario/persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
-  persona:any;
+  persona:Persona | undefined;
   constructor(private http:HttpClient) { }
   
-  public crearPersona(persona:any):Observable<any>{
-    return this.http.post<any>("http://localhost:8080/api/personas", persona);  
+  // public crearPersona(persona:Persona):Observable<Persona>{
+  //   return this.http.post<Persona>("http://localhost:8080/api/personas", persona);  
+  // }
+  public editarPersona(id:number, persona:Persona):Observable<Persona>{
+    return this.http.put<Persona>("http://localhost:8080/api/personas/" + id, persona);   
+
   }
-  public editarPersona(id:number, persona:any):Observable<any>{
-    return this.http.put<any>("http://localhost:8080/api/personas/" + id, persona);   
-  }
-  public eliminarPersona(id:number):Observable<void>{
-    return this.http.delete<void>("http://localhost:8080/api/personas/" + id);   
-  }
+  // public eliminarPersona(persona:Persona):Observable<Persona>{
+  //   return this.http.delete<Persona>("http://localhost:8080/api/personas/" + persona.id);   
+  // }
   
 }
