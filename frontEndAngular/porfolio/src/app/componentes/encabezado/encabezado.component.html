@@ -2,8 +2,8 @@
     <div class="card-header">
     </div>
     <div class="card-body">
-      <h1 class="card-title text-center" id="Nombre"> {{miPorfolio.nombre}} {{miPorfolio.apellido}} </h1>
-      <h3 class="card-title text-center">{{miPorfolio.titulo}}</h3>
+      <h1 class="card-title text-center" id="Nombre"> {{miPorfolio?.nombre}} {{miPorfolio?.apellido}} </h1>
+      <h3 class="card-title text-center">{{miPorfolio?.titulo}}</h3>
       <ul class="card-text m-3">
         <li>
             <h2>Acerca de  
@@ -12,7 +12,7 @@
                 <i class="bi bi-pencil" ></i>
               </a>
             </h2>
-            <p>{{miPorfolio.descripcion}}</p>
+            <p>{{miPorfolio?.descripcion}}</p>
         </li>
     </ul>
     <!--boton flecha-->
@@ -35,8 +35,8 @@
         <form [formGroup]="formulario" (submit)="editarPerfil()">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Id</label>
-            <input type="text" [(ngModel)]="miPorfolio.id" class="form-control" formControlName="id" id="exampleFormControlInput1"
-              placeholder="">
+            <input type="text" class="form-control" formControlName="id" id="exampleFormControlInput1"
+              placeholder="{{miPorfolio?.id}}">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombre</label>
@@ -45,29 +45,29 @@
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-            <input type="text" [(ngModel)]="miPorfolio.apellido" class="form-control" formControlName="apellido" id="exampleFormControlInput1"
-              placeholder="">
+            <input type="text" class="form-control" formControlName="apellido" id="exampleFormControlInput1"
+              placeholder="{{miPorfolio?.apellido}}">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-            <input type="text"[(ngModel)]="miPorfolio.titulo" class="form-control" formControlName="titulo" id="exampleFormControlInput1">
+            <input type="text" class="form-control" formControlName="titulo" id="exampleFormControlInput1" placeholder="{{miPorfolio?.titulo}}">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Acerca De</label>
-            <textarea type="text" [(ngModel)]="miPorfolio.descripcion" class="form-control" formControlName="descripcion" id="exampleFormControlInput1"></textarea>
+            <textarea type="text" class="form-control" formControlName="descripcion" id="exampleFormControlInput1" placeholder="{{miPorfolio?.descripcion}}"></textarea>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Foto Perfil</label>
-            <input type="text" [(ngModel)]="miPorfolio.fotoPerfil" class="form-control" formControlName="fotoPerfil" id="exampleFormControlInput1">
+            <input type="text" class="form-control" formControlName="fotoPerfil" id="exampleFormControlInput1" placeholder="{{miPorfolio?.fotoPerfil}}">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Banner</label>
-            <input type="text" [(ngModel)]="miPorfolio.banner" class="form-control" formControlName="banner" id="exampleFormControlInput1">
+            <input type="text" class="form-control" formControlName="banner" id="exampleFormControlInput1" placeholder="{{miPorfolio?.banner}}">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Localidad</label>
-            <input type="text" [(ngModel)]="miPorfolio.localidad" class="form-control" formControlName="localidad" id="exampleFormControlInput1"
-              rows="3">
+            <input type="text" class="form-control" formControlName="localidad" id="exampleFormControlInput1"
+              rows="3" placeholder="{{miPorfolio?.localidad}}">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

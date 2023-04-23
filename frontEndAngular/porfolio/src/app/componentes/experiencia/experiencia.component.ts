@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/data.service';
 import { GeneralService } from 'src/app/general.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ExperienciaComponent {
   public formulario!: FormGroup;
 
 
-  constructor(public generalService: GeneralService, private formBuilder: FormBuilder){
+  constructor(public generalService: GeneralService, private formBuilder: FormBuilder, private dataService: DataService){
     this.formulario = this.formBuilder.group({
       id: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
@@ -32,9 +33,9 @@ export class ExperienciaComponent {
   }
 
   ngOnInit(): void{
-    this.generalService.obtenerInfoExp().subscribe(data =>{
-      console.log(data);
-      this.experienciaList=data;
-    });
+      this.dataService.misExperiencias$.subscribe(data => {
+        this.experienciaList = data;
+      })
+    }
   }
-}
+
