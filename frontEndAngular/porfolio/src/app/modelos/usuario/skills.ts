@@ -1,4 +1,4 @@
-export interface Educacion{
+export interface Skills{
     id:number;
     titulo:string;
     imagen:string;

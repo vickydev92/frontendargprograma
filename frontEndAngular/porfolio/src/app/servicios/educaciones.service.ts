@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EducacionesService {
-  educacion:Educacion | undefined;
+  
   constructor(private http:HttpClient) { }
   
   public crearEducacion(educacion:Educacion):Observable<Educacion>{
@@ -18,8 +18,8 @@ export class EducacionesService {
     return this.http.put<Educacion>("http://localhost:8080/api/educacion/" + id, educacion);   
 
   }
-  public eliminarEducacion(educacion:Educacion):Observable<Educacion>{
-     return this.http.delete<Educacion>("http://localhost:8080/api/educacion/" + educacion.id);   
+  public eliminarEducacion(id:number):Observable<void>{
+     return this.http.delete<void>("http://localhost:8080/api/educacion/" + id);   
   }
   
 }

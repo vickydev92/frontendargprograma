@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/general.service';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import { DataService } from 'src/app/data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
@@ -14,7 +15,7 @@ export class NavComponent implements OnInit {
   public rutaImagen="../../../assets/img/usuario.png";
   fotoPerfil:any
 
-  constructor(private ruta : Router, public generalService: GeneralService, public dataService: DataService){
+  constructor(private ruta : Router, public generalService: GeneralService, public dataService: DataService, private location:Location){
   }
 
   ngOnInit(): void{
@@ -26,7 +27,7 @@ export class NavComponent implements OnInit {
   cerrarSesion(){
     this.generalService.vistabtn = false;
     (document.getElementById("iniciar") as HTMLElement).style.display = "block"; 
-    this.ruta.navigate(['/'])
+    this.location.back;
   }
 
 }

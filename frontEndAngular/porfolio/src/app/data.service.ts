@@ -49,4 +49,22 @@ misSkills$ = this.misSkillsSource.asObservable();
       this.misEducacionesSource.next(data);
     })
   }
+
+  actualizarMiExperiencia(){
+    this.generalService.obtenerInfoExp().subscribe(data => {
+      this.misExperienciasSource.next(data);
+    })
+}
+
+actualizarMiProyecto(){
+  this.generalService.obtenerInfoProy().subscribe(data => {
+    this.misProyectosSource.next(data);
+  })
+}
+
+actualizarMiSkill(){
+  this.generalService.obtenerInfoSkills().subscribe(data => {
+    this.misSkillsSource.next(data);
+  })
+}
 }

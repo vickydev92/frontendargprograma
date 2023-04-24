@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router'; 
-import { AppComponent } from '../app.component';
+import { FormGroup } from '@angular/forms';
 import { GeneralService } from '../general.service';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,7 @@ import { GeneralService } from '../general.service';
 export class LoginService {
 
 
-  constructor(private formBuilder: FormBuilder, private ruta : Router, private generalService: GeneralService) { }
+  constructor(private generalService: GeneralService, private location: Location) { }
 
  
   
@@ -24,7 +23,7 @@ export class LoginService {
     {
       this.generalService.vistabtn = true;
       (document.getElementById("iniciar") as HTMLElement).style.display = "none"; 
-      this.ruta.navigate(['/'])
+      this.location.back();
 
     }else{
       alert("Usuario no registrado");

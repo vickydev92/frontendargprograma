@@ -1,5 +1,5 @@
 <!--tarjeta experiencia-->
-<div class="card" style="width: 100%; height: max-content;" id="Inicio" >
+<div class="card" style="width: 100%; height: max-content;" id="Inicio">
   <div class="card-body">
     <!--cabecera de la tarjeta-->
     <div class="row justify-content-start">
@@ -24,16 +24,16 @@
         <div class="col" *ngFor="let educacion of educacionList">
           <li name="caja-1">
             <div class="card-encabezado d-flex">
-              <img [src]="educacion.imagen" alt="">
-              <h3>{{educacion.titulo}}</h3>
+              <img [src]="educacion?.imagen" alt="">
+              <h3>{{educacion?.titulo}}</h3>
             </div>
             <div class="card-cuerpo">
               <p>{{educacion?.fechaIni}} - {{educacion?.fechaFin}}</p>
-              <p>{{educacion.descripcion}}</p>
+              <p>{{educacion?.descripcion}}</p>
             </div>
           </li>
         </div>
-       
+
       </div>
       <!--pie de la tarjeta flecha para abajo-->
       <a routerLink="/experiencia" class="btn btn-sm d-flex justify-content-center">
@@ -60,12 +60,12 @@
           </select>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Icono</label>
-            <input type="email" class="form-control" formControlName="imagen" id="exampleFormControlInput1"
+            <input type="text" class="form-control" formControlName="imagen" id="exampleFormControlInput1"
               placeholder="">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-            <input type="email" class="form-control" formControlName="titulo" id="exampleFormControlInput1"
+            <input type="text" class="form-control" formControlName="titulo" id="exampleFormControlInput1"
               placeholder="">
           </div>
           <div class="mb-3">
@@ -101,19 +101,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>ID</option>
-            <option value="1">Uno</option>
-            <option value="2">Dos</option>
-            <option value="3">Tres</option>
-            <option value="4">Cuatro</option>
+        <form [formGroup]="formulario" (submit)="eliminarEducacion()">
+          <label for="exampleFormControlInput1" class="form-label">Id</label>
+          <select class="form-control" formControlName="id" aria-label="Default select example">
+            <option *ngFor="let educacion of educacionList" [value]="educacion.id">{{educacion.titulo}}</option>
           </select>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
       </div>
     </div>
   </div>
@@ -129,7 +126,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="formulario">
+        <form [formGroup]="formulario" (submit)="agregarEducacion()">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Icono</label>
             <input type="text" class="form-control" formControlName="imagen" id="exampleFormControlInput1"
@@ -155,7 +152,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
           </div>
         </form>
       </div>

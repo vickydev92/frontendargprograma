@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GeneralService } from 'src/app/general.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DataService } from 'src/app/data.service';
 import { EducacionesService } from 'src/app/servicios/educaciones.service';
 import { Educacion } from 'src/app/modelos/usuario/educacion';
@@ -51,10 +51,31 @@ export class EducacionComponent {
   }
   
 
-  eliminarEducacion(){}
+  eliminarEducacion(){
+    const educacionId = this.formulario.value.id;
+    this.educacionService.eliminarEducacion(educacionId).subscribe(
+      () => {
+        this.educacionActualizada.next(); //Emitir el subject para actualizar los datos
+        this.formulario.reset();
+      },
+      (error:HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
 
 
-  agregarEducacion(){}
+  agregarEducacion(){
+    const educacion= this.formulario.value;
+    this.educacionService.crearEducacion(educacion).subscribe(
+      (response:Educacion) =>{
+        console.log(response);
+        this.educacionList = educacion;
+        this.educacionActualizada.next();
+        this.formulario.reset();
+      }
+    )
+  }
 
 
 }
