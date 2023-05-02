@@ -1,4 +1,15 @@
-.cuerpo{
-    display: flex;
-    flex-wrap: wrap;
+.encabezado{
+	width: inherit;
+	height: fit-content;
+	background-color: #141a23;
+    border: none;
+	border-radius: inherit;
+	padding: 30px
+}
+
+.proyectos{
+	height: 100vh;
+	background-color: #141a23;
+	border-radius: inherit;
+	border: none;
 }

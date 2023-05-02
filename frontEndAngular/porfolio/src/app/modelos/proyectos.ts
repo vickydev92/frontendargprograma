@@ -5,4 +5,5 @@ export interface Proyectos{
     imagen:string;
     fechaIni:number;
     fechaFin:number;
+    enlace:string;
 }

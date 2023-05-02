@@ -1,5 +1,5 @@
 #fondo{
-    background-color: rgba(29, 29, 29, 0.979);
+    background-color: rgba(29, 29, 29, 0);
 }
 #offcanvasDarkNavbar{
     background-color: rgba(29, 29, 29, 0.979);
@@ -33,4 +33,12 @@ button i{
     border-radius: 50%;
     height: 50px;
     width: 50px;
+}
+
+.container-fluid{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }

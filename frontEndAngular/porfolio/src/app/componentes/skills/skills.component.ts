@@ -38,6 +38,7 @@ export class SkillsComponent {
 }
 
   editarSkills(){
+    console.log(this.formulario.value);
     this.skillsService.editarSkills(this.formulario.value.id, this.formulario.value).subscribe(
       (response:Skills) => {
         console.log(response); 

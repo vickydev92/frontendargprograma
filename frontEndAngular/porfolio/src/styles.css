@@ -1,108 +1,251 @@
-/* You can add global styles to this file, and also import other style files */
-img{
-    width: 50px;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	width: 100%;
 }
 
-body.container{
-    display: flex;
-    margin-top: 0;
-    justify-content: center;
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
-.Ventana{
-         
-    height: 300px;
-    width: 100%;
-    padding: 5% 20%;
+
+.barra-nav {
+	width: 100%;
+	min-height: 58px;
+	/* border-radius: 10px; */
+	background-color: #0a133100;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	padding: 25px; 
+	border-bottom: 1px solid #f5f5dc4d;
 }
 
-#portada {
-    width: 100%;
-    height: 40%;
-}
-.Inicio button img{
-    width: 30px;
+.menu {
+	display: flex;
+	width: 25%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	list-style: none;
+	text-decoration: none;
 }
 
-.card img.Portada{
-width: 100%;
-height: 300px;
+.contenedor {
+	width: 95%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 15px 0;
+	text-align: start;
+
+	/* Grid */
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	gap: 15px;
+}
+
+h3 {
+	text-align: start;
+}
+
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.edu-exp-skills{
+	width: 95%;
+	margin: auto;
+	max-width: 1200px;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 15px;
+    }
+
+.contenedor-proyectos{
+	/* Flexbox */
+	/* width: 70%;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px; */
+
+	overflow: scroll;
+	height: 100vh;
+	/* Grid */
+	display: grid;
+	grid-template-rows: 200px;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 15px;
+}
+.contenedor-proyectos::-webkit-scrollbar{
+	display: none;
+}
+
+.card {
+	display: flex;
+	width: 100%;
+	gap: 20px;
+	flex-direction: column;
+	/* justify-content: space-between;*/
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	/* width: calc(33.33% - 20px);
+
+	/* Flexbox */
+	/* width: calc(33.33% - 20px); */
+}
+
+.card .textos {
+	height: 100%;
+
+	/* Flebox */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	/* Grid */
+	/* display: grid;
+	grid-template-rows: 1fr auto; */
+}
+
+.lista-skills {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	padding-bottom: 20px;
+	flex-direction: column;
+}
+
+.items-card {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 15px 0 0;
+	background-color: #0412224a;
+	border-radius: 5px;
+}
+
+.img-list {
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+}
+
+.contenedor-encabezado {
+	/*background-image: url(./img/banner.jpg); */
+	/* border: solid 1px; */
+	display: flex;
+	background-color: #141a23;
+	justify-content: center;
+	border-radius: 10px;
+	border: solid 1px;
+	text-align: center;
+	/* padding: 20px; */
+	background-size: cover;
+	background-position: center center;
+	/* width: 30%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.contenedor-encabezado ul {
+	list-style: none;
+}
+
+.contenedor-encabezado ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 900px) {
+	.contenedor {
+		grid-template-columns: 1fr;
+	}
+
+	.educacion{
+		grid-template-columns: repeat(1,1fr);
+	    }
+}
+
+@media screen and (max-width: 700px) {}
+
+@media screen and (max-width: 600px) {}
+
+.Inicio {
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 #Nombre {
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 2rem;
+	font-weight: 700;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.card-header{
-    background-image: url("https://img.freepik.com/vector-gratis/programador-trabajando-codigo-desarrollo-web-ingeniero-programacion-script-python-php-java-computadora_90220-249.jpg?w=2000");
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 100%;
-    background-position: center;
-    background-size: contain ;
-    background-color: rgb(255, 255, 255);
-    padding: 7rem;
+h2 {
+	font-size: x-large;
 }
 
-
-li{
-    list-style-type: none;
-    padding: 0.5rem;
+.card-header {
+	display: flex;
+	align-content: space-between;
+	align-items: center;
+	min-height: 150px;
+	width: 100%;
+	display: flex;
+	border-radius: 50%;
+	justify-content: center;
+	position: relative;
+	/*width: inherit;*/
 }
 
-
-@media (max-width: 1200px){
-    .Ventana{
-        margin-top: 5rem;
-        padding: 5% 5%;
-        font-size: 14px;
-    }
- 
-} 
-
-body{
-    background-image: url(https://img.freepik.com/vector-gratis/fondo-formas-geometricas-planas_23-2148376161.jpg?w=2000);
-    /*https://wallpapercave.com/wp/wp2037124.png*/
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    
-    
-    padding: 0;
-    height: 100vh;
-    
+.card-header img {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	/* overflow: auto;*/
 }
 
-#Inicio{
-    box-shadow: 10px 1px 30px black;
-    border: solid 3px rgb(39, 39, 39);
-    margin-bottom: 4.5rem!important;
-}
-.card-body{
-    padding: 2rem;
-}
-
-a i{
-    font-size: 2rem;
-}
-h2 a i{
-    font-size: 1rem;
+.card-body {
+	display: flex;
+	gap: 25px;
+	flex-direction: column;
+	text-align: start;
 }
 
 
-#col-btn{
-    display: flex;
-    justify-content: right;
-}
 
-#col-titulo{
-    display: flex;
-    justify-content: start;
-}
-
-#btn-edicion{
-    font-size: 1rem;
-    padding: 2px
+.titulo-proyectos {
+	font-size: 24px;
+	display: flex;
+	padding: 20px 0;
+	justify-content: center;
+	align-items: center;
 }

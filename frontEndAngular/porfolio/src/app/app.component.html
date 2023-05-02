@@ -1,6 +1,35 @@
-<div class="cuerpo">
-    <app-nav style="flex: basis 50;"></app-nav>
-    <div class="Ventana" style="flex: basis 50;">
-        <router-outlet></router-outlet>
+<nav class="barra-nav">
+   <app-nav></app-nav>
+</nav>
+<router-outlet></router-outlet>
+<section class="contenedor">
+    <div class="contenedor-encabezado">
+        <app-encabezado class="encabezado"></app-encabezado>
     </div>
-</div>
+    <div class="card">
+        <app-proyectos class="proyectos"></app-proyectos>
+    </div>
+</section>
+<section class="edu-exp-skills">
+    <div class="card" style="
+    border: solid 1px; padding: 0;"><!--/* background-image: url(./img/1.jpg); */-->
+        <app-skills></app-skills>
+    </div>
+    <div class="card" style="
+    border: solid 1px; padding:0"><!--/* background-image: url(./img/4.jpg); */-->
+        <app-educacion></app-educacion>
+    </div>
+    <div class="card" style="
+    border: solid 1px;"><!--/* background-image: url(./img/5.jpg); */-->
+        <app-experiencia></app-experiencia>
+    </div>
+</section>
+<footer class="barra-nav" style="height: 200px;">
+    <h3>Argentina Programa</h3>
+    <ul class="menu">
+        <li>inicio</li>
+        <li>contacto</li>
+        <li>login</li>
+
+    </ul>
+</footer>
