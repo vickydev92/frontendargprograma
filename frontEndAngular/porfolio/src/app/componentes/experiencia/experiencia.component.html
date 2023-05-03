@@ -1,45 +1,36 @@
- <!--SECCION DE EXPERIENCIA-->
- <div class="card" id="" style="width: 100%; height: 100vh;" id="Inicio">
-    <div class="card-body">
-      <!--cabecera de la tarjeta-->
-      <div class="row justify-content-start">
-        <div class="col-4" id="col-titulo">
-          <h2 class="card-title text-center" id="Nombre">
-            Experiencia
-          </h2>
-        </div>
-        <div class="col-8" id="col-btn">
-          <!--boton de lapiz-->
-          <a type="" class=""  *ngIf="generalService.vistabtn" >
-            <i class="bi bi-pencil lapiz" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#editarexp"></i>
-            <i class="bi bi-trash2" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#eliminarexp"></i>
-          <i class="bi bi-plus" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#agregarexp"></i>
-          </a>
-        </div>
-      </div>
-      <!--cuerpo de la tarjeta-->
-      <div class="container text-center">
-        <div class="row row-cols-2">
-          <div class="col" *ngFor="let experiencia of experienciaList">
-            <li name="caja-1">
-              <div class="card-encabezado d-flex">
-                <img [src]="experiencia.imagen" alt="">
-                <h3>{{experiencia.titulo}}</h3>
-              </div>
-              <div class="card-cuerpo">
-                <p> <time>{{experiencia.fechaIni}}</time> - <time>{{experiencia.fechaFin}}</time></p>
-                <p>{{experiencia.descripcion}}</p>
-              </div>
-            </li>
-          </div>
-        </div>
-      </div>
-      <!--pie de la tarjeta-->
-      <a routerLink="/skills" class="btn btn-sm d-flex justify-content-center">
-        <i class="bi bi-chevron-compact-down"></i>
-      </a>
-    </div>
+<!--tarjeta experiencia-->
+<div class="card-header-skills">
+  <!--cabecera de la tarjeta-->
+  <div class="" id="">
+    <h2 class="" id="">
+      Experiencia
+    </h2>
+  </div>
+  <div class="" id="col-btn">
+    <!--boton de lapiz-->
+    <a type="" class="" *ngIf="generalService.vistabtn">
+      <i class="bi bi-pencil lapiz" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#editarexp"></i>
+      <i class="bi bi-trash2" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#eliminarexp"></i>
+      <i class="bi bi-plus" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#agregarexp"></i>
+    </a>
+  </div>
 </div>
+<!--cuerpo de la tarjeta-->
+<ul class="lista-skills" *ngFor="let experiencia of experienciaList">
+  <li class="items-card">
+    <div class="card-encabezado">
+      <img [src]="experiencia.imagen" class="img-list" alt="">
+    </div>
+    <div class="card-cuerpo">
+      <h3 class="edu">{{experiencia.titulo}}</h3>
+      <p> <time>{{experiencia.fechaIni}}</time> - <time>{{experiencia.fechaFin}}</time></p>
+      <p>{{experiencia.descripcion}}</p>
+    </div>
+  </li>
+</ul>
+
+
+
 
 <!--Modal de edicion-->
 <div class="modal fade" id="editarexp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -90,7 +81,8 @@
 </div>
 
 <!--Modal para eliminar-->
-<div class="modal fade" id="eliminarexp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="eliminarexp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -102,10 +94,10 @@
           <label for="exampleFormControlInput1" class="form-label">Id</label>
           <select class="form-control" formControlName="id" aria-label="Default select example">
             <option *ngFor="let experiencia of experienciaList" [value]="experiencia.id">{{experiencia.titulo}}</option>
-          </select> 
+          </select>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal">Eliminar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
           </div>
         </form>
       </div>
@@ -149,7 +141,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal">Guardar cambios</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
           </div>
         </form>
       </div>

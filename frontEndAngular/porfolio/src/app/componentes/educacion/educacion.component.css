@@ -1,35 +1,18 @@
 .card-encabezado{
-    display: flex!important;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-}
-h3{
-    width: 100%;
-    text-align: start;
-}
-.col{
-    display: flex;
-    justify-content: center;
-}
-#col-titulo{
-    display: flex;
-    justify-content: flex-start ;
+    grid-template-columns: 25% 1fr;
+    display:grid;
+    gap:15px;
+    align-content: center;
+    align-items: center;
 }
 
 .card-cuerpo{
-    text-align: start;
+    font-size: smaller;
+    grid-template-columns: 25% 1fr;
+    display: grid;
+    gap: 15px;
 }
 
-p{
-    margin-bottom: 0;
-}
-
-img{
-    width: 15%;
-}
-@media (max-width: 400px) {
-    h3{
-        font-size: 1.5em;
-    }
+.edu{
+    font-size: smaller;
 }

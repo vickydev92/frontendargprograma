@@ -29,5 +29,39 @@
   }
   
   h3{
-    font-size: 20px;
+    font-size: 10px;
   }
+
+  
+
+  .titulo-skills{
+    width: 100%;
+    font-size:smaller;
+  }
+
+  ul{
+    padding:0;
+    margin:0;
+  }
+
+  .textos{
+    padding:15px;
+  }
+
+  p{
+    margin: 0;
+  }
+
+  .barra-y-titulo{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 10px 10px;
+    width: 92%;
+  }
+
+  .img-list{
+    background-color: white;
+
+  }
+
+  

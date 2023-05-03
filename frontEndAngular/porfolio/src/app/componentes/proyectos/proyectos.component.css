@@ -40,7 +40,7 @@
 li{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 250px;
 }
 
 .tarjeta-pie{
@@ -56,3 +56,4 @@ li{
 .descripcion-tarjeta{
     margin-bottom: 0;
 }
+

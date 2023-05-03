@@ -30,16 +30,7 @@ body {
 	border-bottom: 1px solid #f5f5dc4d;
 }
 
-.menu {
-	display: flex;
-	width: 25%;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: nowrap;
-	list-style: none;
-	text-decoration: none;
-}
+
 
 .contenedor {
 	width: 95%;
@@ -74,20 +65,11 @@ h3 {
     }
 
 .contenedor-proyectos{
-	/* Flexbox */
-	/* width: 70%;
-
+	overflow-y: scroll;
+	height: 86vh;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 20px; */
-
-	overflow: scroll;
-	height: 100vh;
-	/* Grid */
-	display: grid;
-	grid-template-rows: 200px;
-	grid-template-columns: repeat(1, 1fr);
 	gap: 15px;
+	flex-direction: column-reverse;
 }
 .contenedor-proyectos::-webkit-scrollbar{
 	display: none;
@@ -129,18 +111,23 @@ h3 {
 	list-style: none;
 	display: flex;
 	gap: 20px;
-	padding-bottom: 20px;
+	padding: 0 15px;
 	flex-direction: column;
 }
+
+#col-btn{
+    text-align:end;
+  }
 
 .items-card {
 	height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0px 15px 0 0;
+	padding: 5px 15px;
 	background-color: #0412224a;
 	border-radius: 5px;
+	height: fit-content;
 }
 
 .img-list {
@@ -149,32 +136,14 @@ h3 {
 	border-radius: 5px;
 }
 
-.contenedor-encabezado {
-	/*background-image: url(./img/banner.jpg); */
-	/* border: solid 1px; */
-	display: flex;
-	background-color: #141a23;
-	justify-content: center;
-	border-radius: 10px;
-	border: solid 1px;
-	text-align: center;
-	/* padding: 20px; */
-	background-size: cover;
-	background-position: center center;
-	/* width: 30%; */
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
+.card-header-skills{
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap:15px;
+    padding:15px;
+  }
 
-.contenedor-encabezado ul {
-	list-style: none;
-}
 
-.contenedor-encabezado ul li {
-	margin: 15px;
-	font-weight: bold;
-}
 
 
 
@@ -183,7 +152,7 @@ h3 {
 		grid-template-columns: 1fr;
 	}
 
-	.educacion{
+	.edu-exp-skills{
 		grid-template-columns: repeat(1,1fr);
 	    }
 }
@@ -192,60 +161,3 @@ h3 {
 
 @media screen and (max-width: 600px) {}
 
-.Inicio {
-	height: 70vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
-#Nombre {
-	font-size: 2rem;
-	font-weight: 700;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-h2 {
-	font-size: x-large;
-}
-
-.card-header {
-	display: flex;
-	align-content: space-between;
-	align-items: center;
-	min-height: 150px;
-	width: 100%;
-	display: flex;
-	border-radius: 50%;
-	justify-content: center;
-	position: relative;
-	/*width: inherit;*/
-}
-
-.card-header img {
-	position: relative;
-	width: 100px;
-	height: 100px;
-	top: 0;
-	left: 0;
-	border-radius: 50%;
-	/* overflow: auto;*/
-}
-
-.card-body {
-	display: flex;
-	gap: 25px;
-	flex-direction: column;
-	text-align: start;
-}
-
-
-
-.titulo-proyectos {
-	font-size: 24px;
-	display: flex;
-	padding: 20px 0;
-	justify-content: center;
-	align-items: center;
-}

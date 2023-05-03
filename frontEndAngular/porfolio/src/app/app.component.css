@@ -1,7 +1,16 @@
+.contenedor-encabezado {
+	display: flex;
+	justify-content: center;
+	border-radius: 10px;
+	border: solid 1px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .encabezado{
 	width: inherit;
 	height: fit-content;
-	background-color: #141a23;
     border: none;
 	border-radius: inherit;
 	padding: 30px
@@ -9,7 +18,57 @@
 
 .proyectos{
 	height: 100vh;
-	background-color: #141a23;
 	border-radius: inherit;
 	border: none;
+}
+
+.seccion-proyectos{
+	border-radius: 10px;
+}
+
+.edu-exp-skills{
+	width: 95%;
+	margin: auto;
+	max-width: 1200px;
+	display: grid;
+	grid-template-columns: repeat (3,1fr);
+	gap: 15px;
+}
+
+.card{
+	background-color: transparent;
+}
+
+.caja-1{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 25px;
+	flex-wrap: wrap;
+}
+
+
+.titulo-footer{
+	height: 25px;
+}
+
+.menu {
+	display: flex;
+	width: 50%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	list-style: none;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0;
+    align-content: center;
+}
+
+.barra-footer{
+	display: grid;
+	grid-template-columns:  1fr 1fr;
+	gap: 15px;
+	padding: 25px;
 }
