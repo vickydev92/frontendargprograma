@@ -15,6 +15,10 @@ body {
 	flex-direction: column;
 }
 
+p{
+	margin: 0;
+}
+
 
 .barra-nav {
 	width: 100%;
@@ -38,6 +42,7 @@ body {
 	margin: auto;
 	padding: 15px 0;
 	text-align: start;
+	height: 570px;
 
 	/* Grid */
 	display: grid;
@@ -66,7 +71,7 @@ h3 {
 
 .contenedor-proyectos{
 	overflow-y: scroll;
-	height: 86vh;
+	height: 70vh;
 	display: flex;
 	gap: 15px;
 	flex-direction: column-reverse;
@@ -120,14 +125,15 @@ h3 {
   }
 
 .items-card {
-	height: 50px;
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 83%;
+	gap: 10px;
 	align-items: center;
-	justify-content: space-between;
 	padding: 5px 15px;
 	background-color: #0412224a;
 	border-radius: 5px;
-	height: fit-content;
+	min-height: 95px;
+	
 }
 
 .img-list {
@@ -141,15 +147,26 @@ h3 {
     display: grid;
     gap:15px;
     padding:15px;
+	height: 58px;
   }
 
-
+.contenedor-img{
+	display: flex;
+	align-content:center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
 
 
 
 @media screen and (max-width: 900px) {
 	.contenedor {
 		grid-template-columns: 1fr;
+		height: auto;
+	}
+
+	.contenedor-proyectos{
+		height: 87vh;
 	}
 
 	.edu-exp-skills{
@@ -161,3 +178,23 @@ h3 {
 
 @media screen and (max-width: 600px) {}
 
+.barra-y-titulo{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 10px 10px;
+    width: 100%;
+	max-width: 84%;
+}
+
+  .modal{
+	background: #1b202d6e;
+  }
+
+  .modal-content{
+	background-color: #4e6260;
+  }
+
+.i{
+	font-size: 16px;
+	padding: 0 8px;
+  }

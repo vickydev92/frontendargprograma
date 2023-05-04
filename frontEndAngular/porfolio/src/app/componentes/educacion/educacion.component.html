@@ -1,34 +1,36 @@
 <!--tarjeta educacion-->
-  <div class="card-header-skills">
-    <!--cabecera de la tarjeta-->
-      <div class="" id="">
-        <h2 class="" id="">
-          Educación
-        </h2>
-      </div>
-      <div class="" id="col-btn">
-        <!--boton de lapiz-->
-        <a type="" class="" *ngIf="generalService.vistabtn">
-          <i class="bi bi-pencil lapiz" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop0"></i>
-          <i class="bi bi-trash2" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"></i>
-          <i class="bi bi-plus" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"></i>
-        </a>
-      </div>
+<div class="card-header-skills">
+  <!--cabecera de la tarjeta-->
+  <div class="" id="">
+    <h2 class="" id="">
+      Educación
+    </h2>
   </div>
-  <!--cuerpo de la tarjeta-->
-      <!--columna1-->
-      <ul class="lista-skills" *ngFor="let educacion of educacionList">
-        <li class="items-card">
-          <div class="card-encabezado">
-            <img [src]="educacion?.imagen" class="img-list" alt="">
-          </div>
-          <div class="card-cuerpo">
-            <h3 class="edu">{{educacion?.titulo}}</h3>
-            <p>{{educacion?.fechaIni}} - {{educacion?.fechaFin}}</p>
-            <p>{{educacion?.descripcion}}</p>
-          </div>
-        </li>
-      </ul>
+  <div class="" id="col-btn">
+    <!--boton de lapiz-->
+    <a type="" class="" *ngIf="generalService.vistabtn">
+      <i class="bi bi-pencil lapiz" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop0"></i>
+      <i class="bi bi-trash2" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"></i>
+      <i class="bi bi-plus" id="btn-edicion" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"></i>
+    </a>
+  </div>
+</div>
+<!--cuerpo de la tarjeta-->
+<!--columna1-->
+<div class="textos">
+  <ul class="lista-skills" *ngFor="let educacion of educacionList">
+    <li class="items-card">
+      <div class="contenedor-img">
+        <img [src]="educacion?.imagen" class="img-list" alt="">
+      </div>
+      <div class="barra-y-titulo">
+        <h3 class="edu">{{educacion?.titulo}}</h3>
+        <p>{{educacion?.fechaIni}} - {{educacion?.fechaFin}}</p>
+        <p>{{educacion?.descripcion}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
 
 
 
@@ -98,7 +100,7 @@
           </select>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
           </div>
         </form>
       </div>

@@ -1,18 +1,28 @@
 .card-encabezado{
-    grid-template-columns: 25% 1fr;
+   /* grid-template-columns: 25% 1fr;
     display:grid;
     gap:15px;
     align-content: center;
-    align-items: center;
+    align-items: center;*/
+    width: 30%;
 }
 
 .card-cuerpo{
     font-size: smaller;
-    grid-template-columns: 25% 1fr;
-    display: grid;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 10px 10px;
+    width: 92%;
+    
 }
 
 .edu{
-    font-size: smaller;
+    font-size: 15px;
 }
+
+p{
+    font-size: 14px;
+}
+.textos{
+    padding:15px;
+  }

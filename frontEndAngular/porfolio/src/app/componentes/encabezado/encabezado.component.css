@@ -1,0 +1,22 @@
+.encabezado-tarjeta{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.foto-perfil{
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.card-body{
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

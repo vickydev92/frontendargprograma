@@ -19,7 +19,9 @@
   <div class="textos">
     <ul class="lista-skills">
       <li *ngFor="let skills of skillsList" class="items-card" >
-        <img [src]="skills.imagen" alt="" class="img-list">
+        <div class="contenedor-img">
+          <img [src]="skills.imagen" alt="" class="img-list">
+        </div>
         <div class="barra-y-titulo">
           <h3 class="titulo-skills">{{skills.titulo}}</h3>
           <div class="progress">

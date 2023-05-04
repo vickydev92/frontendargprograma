@@ -16,18 +16,20 @@
   </div>
 </div>
 <!--cuerpo de la tarjeta-->
-<ul class="lista-skills" *ngFor="let experiencia of experienciaList">
-  <li class="items-card">
-    <div class="card-encabezado">
-      <img [src]="experiencia.imagen" class="img-list" alt="">
-    </div>
-    <div class="card-cuerpo">
-      <h3 class="edu">{{experiencia.titulo}}</h3>
-      <p> <time>{{experiencia.fechaIni}}</time> - <time>{{experiencia.fechaFin}}</time></p>
-      <p>{{experiencia.descripcion}}</p>
-    </div>
-  </li>
-</ul>
+<div class="textos">
+  <ul class="lista-skills" *ngFor="let experiencia of experienciaList">
+    <li class="items-card">
+      <div class="contenedor-img">
+        <img [src]="experiencia.imagen" class="img-list" alt="">
+      </div>
+      <div class="barra-y-titulo">
+        <h3 class="edu">{{experiencia.titulo}}</h3>
+        <p> <time>{{experiencia.fechaIni}}</time> - <time>{{experiencia.fechaFin}}</time></p>
+        <p>{{experiencia.descripcion}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
 
 
 

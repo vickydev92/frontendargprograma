@@ -1,16 +1,18 @@
-<div class="card-header">
-  <img [src]="miPorfolio?.fotoPerfil" alt="">
+<div class="encabezado-tarjeta">
+  <img [src]="miPorfolio?.fotoPerfil" alt="" class="foto-perfil">
 </div>
 <div class="card-body">
   <h1 class="card-title" id="Nombre"> {{miPorfolio?.nombre}} {{miPorfolio?.apellido}} </h1>
   <h2 class="card-title">{{miPorfolio?.titulo}}</h2>
-      <h3>Acerca de
-        <!--boton de lapiz-->
-        <a type="" *ngIf="generalService.vistabtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          <i class="bi bi-pencil"></i>
-        </a>
-      </h3>
-      <p>{{miPorfolio?.descripcion}}</p>
+  <div class="acerca-de">
+    <h3>Acerca de
+      <!--boton de lapiz-->
+      <a type="" *ngIf="generalService.vistabtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <i class="bi bi-pencil"></i>
+      </a>
+    </h3>
+    <p>{{miPorfolio?.descripcion}}</p>
+  </div>
 </div>
 
 <!--Modal de edicion-->
