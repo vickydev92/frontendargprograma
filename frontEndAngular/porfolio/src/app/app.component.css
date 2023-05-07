@@ -54,7 +54,7 @@
 
 .menu {
 	display: flex;
-	width: 50%;
+	width: 80%;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
@@ -65,10 +65,28 @@
 	margin: 0;
     align-content: center;
 }
+.menu-items{
+	display: flex;
+	justify-content: center;
+}
 
 .barra-footer{
 	display: grid;
 	grid-template-columns:  1fr 1fr;
 	gap: 15px;
 	padding: 25px;
+}
+
+.espacio{
+	height: 100px;
+}
+
+@media screen and (max-width: 900px) {
+	.menu-items {
+		justify-content: start;	
+	}
+	.menu{
+		flex-direction: column;
+		padding: 30px;
+	}
 }

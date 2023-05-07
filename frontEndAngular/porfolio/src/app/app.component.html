@@ -1,15 +1,15 @@
 <nav class="barra-nav">
    <app-nav></app-nav>
 </nav>
-<router-outlet></router-outlet>
 <section class="contenedor">
     <div class="contenedor-encabezado">
         <app-encabezado class="encabezado"></app-encabezado>
     </div>
-    <div class="seccion-proyectos card">
-        <app-proyectos class="proyectos"></app-proyectos>
+    <div class="seccion-proyectos">
+        <app-proyectos class="proyectos" style="height: 100vh;"></app-proyectos>
     </div>
 </section>
+<div class="espacio"></div>
 <section class="edu-exp-skills">
     <div class="card" style="height: fit-content;
     border: solid 1px; padding: 0;"><!--/* background-image: url(./img/1.jpg); */-->
@@ -29,9 +29,9 @@
         <h3 class= "titulo-footer">Argentina Programa</h3>
     </div>
     <ul class="menu">
-        <li>inicio</li>
-        <li>contacto</li>
-        <li>login</li>
+        <li class="menu-items">inicio</li>
+        <li class="menu-items">contacto</li>
+        <li class="menu-items">login</li>
 
     </ul>
 </footer>

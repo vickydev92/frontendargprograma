@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class GeneralService {
  public vistabtn: boolean = false;
+ public iniciar: boolean = false;
+ public btnLog: boolean =true;
 
   constructor(private http:HttpClient) { }
 

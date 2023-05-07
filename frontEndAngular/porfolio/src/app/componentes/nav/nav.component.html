@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark fixed-top" id="fondo">
     <div class="container-fluid">
         <!--BARRA DE NAVEGACION-->
-        <a class="navbar-brand" routerLink="/encabezado" >Argentina Programa <span>#Yoprogramo</span> </a>
+        <a class="navbar-brand" href="#" >Argentina Programa <span>#Yoprogramo</span> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" 
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -19,22 +19,23 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-dismiss="offcanvas"
-                     aria-current="page" routerLink="encabezado">Inicio</a>
+                     aria-current="page"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-dismiss="offcanvas"routerLink="educacion">Educacion</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-dismiss="offcanvas" routerLink="experiencia">Experiencia</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" ></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-dismiss="offcanvas"routerLink="skills">Skills</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-dismiss="offcanvas" routerLink="proyectos">Proyectos</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas"></a>
                     </li>
+                    <app-login *ngIf="generalService.iniciar"></app-login>
                     <li>
-                        <button type="button" class="btn login" id="iniciar" data-bs-dismiss="offcanvas" routerLink="iniciar-sesion"><i>Iniciar sesión</i></button>
+                        <button type="button" class="btn login" id="iniciar" *ngIf="generalService.btnLog" (click)="generalService.iniciar=true; generalService.btnLog=false;">Iniciar sesión</button>
                         <button type="button" class="btn login hide-element" data-bs-dismiss="offcanvas" *ngIf="generalService.vistabtn" (click)="cerrarSesion()"><i>Cerrar sesión</i></button>
                     </li>
                     <li>

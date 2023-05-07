@@ -34,7 +34,7 @@
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(0deg, rgb(0 0 0 /53%) 0%, rgb(0 0 0/ 49%) 51%, rgb(0 0 0 /67%) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.659) 0%, rgba(0, 0, 0, 0.585) 51%, rgba(0, 0, 0, 0.774) 100%);
     padding: 15px;
 }
 
@@ -57,4 +57,16 @@ li{
 .descripcion-tarjeta{
     margin-bottom: 0;
 }
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(168, 168, 168);
+    text-decoration: none;
+}
+
+
 

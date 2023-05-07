@@ -6,5 +6,4 @@ export interface Persona{
     localidad:string;
     descripcion:string;
     fotoPerfil:string;
-    banner:string;
 }

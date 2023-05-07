@@ -71,7 +71,7 @@ h3 {
 
 .contenedor-proyectos{
 	overflow-y: scroll;
-	height: 70vh;
+	height: 71vh;
 	display: flex;
 	gap: 15px;
 	flex-direction: column-reverse;
@@ -130,10 +130,8 @@ h3 {
 	gap: 10px;
 	align-items: center;
 	padding: 5px 15px;
-	background-color: #0412224a;
 	border-radius: 5px;
 	min-height: 95px;
-	
 }
 
 .img-list {
@@ -166,7 +164,7 @@ h3 {
 	}
 
 	.contenedor-proyectos{
-		height: 87vh;
+		height: 98vh;
 	}
 
 	.edu-exp-skills{

@@ -4,6 +4,7 @@
 <div class="card-body">
   <h1 class="card-title" id="Nombre"> {{miPorfolio?.nombre}} {{miPorfolio?.apellido}} </h1>
   <h2 class="card-title">{{miPorfolio?.titulo}}</h2>
+  <p>{{miPorfolio?.localidad}}</p>
   <div class="acerca-de">
     <h3>Acerca de
       <!--boton de lapiz-->
@@ -29,42 +30,37 @@
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Id</label>
             <input type="text" class="form-control" formControlName="id" id="exampleFormControlInput1"
-              placeholder="{{miPorfolio?.id}}">
+              placeholder="">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-            <input type="text" [(ngModel)]="miPorfolio.nombre" class="form-control" formControlName="nombre"
-              id="exampleFormControlInput1" placeholder="">
+            <input type="text" class="form-control" formControlName="nombre"
+              id="exampleFormControlInput1" >
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Apellido</label>
             <input type="text" class="form-control" formControlName="apellido" id="exampleFormControlInput1"
-              placeholder="{{miPorfolio?.apellido}}">
+              placeholder="">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Titulo</label>
             <input type="text" class="form-control" formControlName="titulo" id="exampleFormControlInput1"
-              placeholder="{{miPorfolio?.titulo}}">
+              placeholder="">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Acerca De</label>
             <textarea type="text" class="form-control" formControlName="descripcion" id="exampleFormControlInput1"
-              placeholder="{{miPorfolio?.descripcion}}"></textarea>
+              placeholder=""></textarea>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Foto Perfil</label>
             <input type="text" class="form-control" formControlName="fotoPerfil" id="exampleFormControlInput1"
-              placeholder="{{miPorfolio?.fotoPerfil}}">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Banner</label>
-            <input type="text" class="form-control" formControlName="banner" id="exampleFormControlInput1"
-              placeholder="{{miPorfolio?.banner}}">
+              placeholder="">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Localidad</label>
             <input type="text" class="form-control" formControlName="localidad" id="exampleFormControlInput1" rows="3"
-              placeholder="{{miPorfolio?.localidad}}">
+              placeholder="">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
 import { GeneralService } from 'src/app/general.service';
 import { Persona } from 'src/app/modelos/usuario/persona';
@@ -18,20 +18,28 @@ export class EncabezadoComponent {
   miPorfolio:any;
   constructor(public generalService: GeneralService, public formBuilder: FormBuilder, public personaService:PersonaService, public dataService: DataService){
     this.formulario = this.formBuilder.group({
-      id:[],
-      nombre: ['', [Validators.required]],
-      apellido: ['', [Validators.required]],
-      titulo: ['', [Validators.required]],
-      localidad: ['', [Validators.required]],
-      fotoPerfil: ['', [Validators.required]],
-      banner: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]]
+      id:new FormControl('',Validators.required),
+      nombre: new FormControl (''),
+      apellido: new FormControl (''),
+      titulo: new FormControl(''),
+      localidad: new FormControl(''),
+      fotoPerfil: new FormControl(''),
+      descripcion: new FormControl ('')
     });
   }
 
 ngOnInit(): void{
   this.dataService.miPorfolio$.subscribe(data => {
     this.miPorfolio = data;
+    this.formulario.setValue({
+      id: this.miPorfolio?.id,
+      nombre: this.miPorfolio?.nombre,
+      apellido: this.miPorfolio?.apellido,
+      titulo: this.miPorfolio?.titulo,
+      localidad: this.miPorfolio?.localidad,
+      fotoPerfil: this.miPorfolio?.fotoPerfil,
+      descripcion: this.miPorfolio?.descripcion
+    })
   })
 }
 

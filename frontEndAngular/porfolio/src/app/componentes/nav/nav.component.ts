@@ -26,6 +26,7 @@ export class NavComponent implements OnInit {
 
   cerrarSesion(){
     this.generalService.vistabtn = false;
+    this.generalService.btnLog= true;
     (document.getElementById("iniciar") as HTMLElement).style.display = "block"; 
     this.location.back;
   }
