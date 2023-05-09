@@ -19,23 +19,66 @@ export class SkillsComponent {
   skillsList:any;
   
   constructor( public generalService: GeneralService, private formBuilder: FormBuilder, private dataService: DataService, private skillsService:SkillsService){
+  
+  }
+
+
+  ngOnInit(): void{
+
     this.formulario = this.formBuilder.group({
       id: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
       porcentaje: ['', [Validators.required]],
       imagen: ['', [Validators.required]]
     });
-  }
 
 
-  ngOnInit(): void{
     this.dataService.misSkills$.subscribe(data => {
       this.skillsList = data;
     })
     this.skillsActualizada.subscribe(() => {
       this.dataService.actualizarMiSkill(); 
     })
-}
+
+    const idSkillsSeleccionada=Number(
+      (<HTMLSelectElement>document.getElementById('select-idSkills')).value
+    );
+
+    const skillsSeleccionada= this.buscarSkillsPorId(
+      idSkillsSeleccionada
+    );
+      if (skillsSeleccionada) {
+        this.formulario.setValue({
+          id: skillsSeleccionada.id,
+          imagen:skillsSeleccionada.imagen,
+          titulo:skillsSeleccionada.titulo,
+          porcentaje:skillsSeleccionada.porcentaje,
+          
+        });
+      }
+
+  }
+
+  buscarSkillsPorId(id:number): Skills{
+    return this.skillsList.find((skills:Skills)=> skills.id === id);
+  }
+
+  mostrarDatos(){
+    const idSkillsSeleccionada=Number(
+      (<HTMLSelectElement>document.getElementById('select-idSkills')).value
+    );
+    const skillsSeleccionada= this.buscarSkillsPorId(
+      idSkillsSeleccionada
+    );
+    if (skillsSeleccionada) {
+      this.formulario.setValue({
+        id: skillsSeleccionada.id,
+        imagen:skillsSeleccionada.imagen,
+        titulo:skillsSeleccionada.titulo,
+        porcentaje: skillsSeleccionada.porcentaje,
+      });
+    }
+  }
 
   editarSkills(){
     console.log(this.formulario.value);
@@ -75,5 +118,5 @@ export class SkillsComponent {
       }
     )
   }
-  
 }
+

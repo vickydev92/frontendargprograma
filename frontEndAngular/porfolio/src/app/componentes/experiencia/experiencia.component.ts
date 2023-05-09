@@ -21,6 +21,12 @@ export class ExperienciaComponent {
 
 
   constructor(public generalService: GeneralService, private formBuilder: FormBuilder, private dataService: DataService, private experienciasService:ExperienciasService){
+    
+
+  }
+
+  ngOnInit(): void{
+
     this.formulario = this.formBuilder.group({
       id: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
@@ -30,9 +36,6 @@ export class ExperienciaComponent {
       imagen: ['', [Validators.required]]
     });
 
-  }
-
-  ngOnInit(): void{
       this.dataService.misExperiencias$.subscribe(data => {
         this.experienciaList = data;
       })
@@ -40,6 +43,48 @@ export class ExperienciaComponent {
       this.experienciaActualizada.subscribe(() => {
         this.dataService.actualizarMiExperiencia(); 
       })
+
+      const idExperienciaSeleccionada=Number(
+        (<HTMLSelectElement>document.getElementById('select-idExp')).value
+      );
+  
+      const experienciaSeleccionada= this.buscarExperienciaPorId(
+        idExperienciaSeleccionada
+      );
+        if (experienciaSeleccionada) {
+          this.formulario.setValue({
+            id: experienciaSeleccionada.id,
+            imagen:experienciaSeleccionada.imagen,
+            titulo:experienciaSeleccionada.titulo,
+            fechaIni: experienciaSeleccionada.fechaIni,
+            fechaFin: experienciaSeleccionada.fechaFin,
+            descripcion: experienciaSeleccionada.descripcion
+          });
+        }
+  
+    }
+  
+    buscarExperienciaPorId(id:number): Experiencia{
+      return this.experienciaList.find((experiencia:Experiencia)=> experiencia.id === id);
+    }
+  
+    mostrarDatos(){
+      const idExperienciaSeleccionada=Number(
+        (<HTMLSelectElement>document.getElementById('select-idExp')).value
+      );
+      const experienciaSeleccionada= this.buscarExperienciaPorId(
+        idExperienciaSeleccionada
+      );
+      if (experienciaSeleccionada) {
+        this.formulario.setValue({
+          id: experienciaSeleccionada.id,
+          imagen:experienciaSeleccionada.imagen,
+          titulo:experienciaSeleccionada.titulo,
+          fechaIni: experienciaSeleccionada.fechaIni,
+          fechaFin: experienciaSeleccionada.fechaFin,
+          descripcion: experienciaSeleccionada.descripcion
+        });
+      }
     }
 editarExperiencia(){
   this.experienciasService.editarExperiencia(this.formulario.value.id, this.formulario.value).subscribe(

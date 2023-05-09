@@ -19,6 +19,15 @@ export class ProyectosComponent {
 
   constructor(public generalService: GeneralService, public formBuilder:FormBuilder, private dataService: DataService, private proyectosService: ProyectosService){
     
+   
+    
+  }
+  
+
+
+  
+  ngOnInit(): void{
+
     this.formulario = this.formBuilder.group({
       id: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
@@ -29,20 +38,59 @@ export class ProyectosComponent {
       enlace: ['', [Validators.required]]
 
     });
-    
-  }
-  
-
-
-  
-  ngOnInit(): void{
       this.dataService.misProyectos$.subscribe(data => {
         this.proyectoList = data;
       })
+
       this.proyectoActualizada.subscribe(() => {
         this.dataService.actualizarMiProyecto(); 
       })
-  }
+
+
+      const idProyectoSeleccionada=Number(
+        (<HTMLSelectElement>document.getElementById('select-idProy')).value
+      );
+  
+      const proyectoSeleccionada= this.buscarProyectoPorId(
+        idProyectoSeleccionada
+      );
+        if (proyectoSeleccionada) {
+          this.formulario.setValue({
+            id: proyectoSeleccionada.id,
+            imagen:proyectoSeleccionada.imagen,
+            titulo:proyectoSeleccionada.titulo,
+            fechaIni: proyectoSeleccionada.fechaIni,
+            fechaFin: proyectoSeleccionada.fechaFin,
+            descripcion: proyectoSeleccionada.descripcion
+          });
+        }
+  
+    }
+  
+    buscarProyectoPorId(id:number): Proyectos{
+      return this.proyectoList.find((proyecto:Proyectos)=> proyecto.id === id);
+    }
+  
+    mostrarDatos(){
+      const idProyectoSeleccionada=Number(
+        (<HTMLSelectElement>document.getElementById('select-idProy')).value
+      );
+      const proyectoSeleccionada= this.buscarProyectoPorId(
+        idProyectoSeleccionada
+      );
+      if (proyectoSeleccionada) {
+        this.formulario.setValue({
+          id: proyectoSeleccionada.id,
+          imagen:proyectoSeleccionada.imagen,
+          titulo:proyectoSeleccionada.titulo,
+          fechaIni: proyectoSeleccionada.fechaIni,
+          fechaFin: proyectoSeleccionada.fechaFin,
+          descripcion: proyectoSeleccionada.descripcion,
+          enlace:proyectoSeleccionada.enlace
+        });
+      }
+    }
+
 
   editarProyecto(){
     this.proyectosService.editarProyectos(this.formulario.value.id, this.formulario.value).subscribe(
@@ -81,7 +129,6 @@ export class ProyectosComponent {
       }
     )
   }
-
 }
 
   

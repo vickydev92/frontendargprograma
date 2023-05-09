@@ -19,6 +19,11 @@ export class EducacionComponent {
   private educacionActualizada = new Subject<void>();
 
   constructor(public generalService: GeneralService, private formBuilder: FormBuilder, private http: HttpClient, private dataService: DataService, private educacionService: EducacionesService) {
+   
+  }
+
+  ngOnInit(): void{
+
     this.formulario = this.formBuilder.group({
       id: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
@@ -27,9 +32,7 @@ export class EducacionComponent {
       descripcion: ['', [Validators.required]],
       imagen: ['', [Validators.required]]
     });
-  }
 
-  ngOnInit(): void{
     this.dataService.misEducaciones$.subscribe(data => {
       this.educacionList = data;
     });
@@ -37,6 +40,49 @@ export class EducacionComponent {
     this.educacionActualizada.subscribe(() => {
       this.dataService.actualizarMiEducacion(); 
     })
+
+    const idEducacionSeleccionada=Number(
+      (<HTMLSelectElement>document.getElementById('select-idEdu')).value
+    );
+
+    const educacionSeleccionada= this.buscarEducacionPorId(
+      idEducacionSeleccionada
+    );
+      if (educacionSeleccionada) {
+        this.formulario.setValue({
+          id: educacionSeleccionada.id,
+          imagen:educacionSeleccionada.imagen,
+          titulo:educacionSeleccionada.titulo,
+          fechaIni: educacionSeleccionada.fechaIni,
+          fechaFin: educacionSeleccionada.fechaFin,
+          descripcion: educacionSeleccionada.descripcion
+        });
+      }
+
+  }
+
+  buscarEducacionPorId(id:number): Educacion{
+    return this.educacionList.find((educacion:Educacion)=> educacion.id === id);
+  }
+
+  mostrarDatos(){
+    const idEducacionSeleccionada=Number(
+      (<HTMLSelectElement>document.getElementById('select-idEdu')).value
+    );
+    const educacionSeleccionada= this.buscarEducacionPorId(
+      idEducacionSeleccionada
+    );
+    if (educacionSeleccionada) {
+      this.formulario.setValue({
+        id: educacionSeleccionada.id,
+        imagen:educacionSeleccionada.imagen,
+        titulo:educacionSeleccionada.titulo,
+        fechaIni: educacionSeleccionada.fechaIni,
+        fechaFin: educacionSeleccionada.fechaFin,
+        descripcion: educacionSeleccionada.descripcion
+      });
+    }
+    
   }
 
   editarEducacion(){
