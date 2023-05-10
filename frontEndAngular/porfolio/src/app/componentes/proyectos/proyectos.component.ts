@@ -73,7 +73,7 @@ export class ProyectosComponent {
   
     mostrarDatos(){
       const idProyectoSeleccionada=Number(
-        (<HTMLSelectElement>document.getElementById('select-idProy')).value
+        (<HTMLSelectElement> document.getElementById('select-idProy')).value
       );
       const proyectoSeleccionada= this.buscarProyectoPorId(
         idProyectoSeleccionada

@@ -17,8 +17,8 @@
 </div>
 <!--cuerpo de la tarjeta-->
 <div class="textos">
-  <ul class="lista-skills" *ngFor="let experiencia of experienciaList">
-    <li class="items-card">
+  <ul class="lista-skills">
+    <li class="items-card" *ngFor="let experiencia of experienciaList">
       <div class="contenedor-img">
         <img [src]="experiencia.imagen" class="img-list" alt="">
       </div>

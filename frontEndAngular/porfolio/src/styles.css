@@ -6,7 +6,7 @@
 }
 
 body {
-	background: #1D202B;
+	background: #1a1a1c;
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
 	min-height: 100vh;
@@ -116,7 +116,8 @@ h3 {
 	list-style: none;
 	display: flex;
 	gap: 20px;
-	padding: 0 15px;
+	padding: 0;
+	margin: 0;
 	flex-direction: column;
 }
 
@@ -164,7 +165,7 @@ h3 {
 	}
 
 	.contenedor-proyectos{
-		height: 98vh;
+		height: 91vh;
 	}
 
 	.edu-exp-skills{
