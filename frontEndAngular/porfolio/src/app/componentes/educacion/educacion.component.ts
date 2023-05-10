@@ -61,8 +61,12 @@ export class EducacionComponent {
 
   }
 
-  buscarEducacionPorId(id:number): Educacion{
-    return this.educacionList.find((educacion:Educacion)=> educacion.id === id);
+  buscarEducacionPorId(id:number): Educacion| null{
+    if(this.educacionList){
+      return this.educacionList.find((educacion:Educacion)=> educacion.id === id);
+    }else{
+      return null;
+    }
   }
 
   mostrarDatos(){

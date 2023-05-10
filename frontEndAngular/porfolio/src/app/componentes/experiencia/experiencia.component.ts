@@ -64,8 +64,12 @@ export class ExperienciaComponent {
   
     }
   
-    buscarExperienciaPorId(id:number): Experiencia{
-      return this.experienciaList.find((experiencia:Experiencia)=> experiencia.id === id);
+    buscarExperienciaPorId(id:number): Experiencia|null{
+      if(this.experienciaList){
+        return this.experienciaList.find((experiencia:Experiencia)=> experiencia.id === id);
+      }else{
+        return null;
+      }
     }
   
     mostrarDatos(){

@@ -59,8 +59,12 @@ export class SkillsComponent {
 
   }
 
-  buscarSkillsPorId(id:number): Skills{
-    return this.skillsList.find((skills:Skills)=> skills.id === id);
+  buscarSkillsPorId(id:number): Skills|null{
+    if(this.skillsList){
+      return this.skillsList.find((skills:Skills)=> skills.id === id);
+    }else{
+      return null;
+    }
   }
 
   mostrarDatos(){

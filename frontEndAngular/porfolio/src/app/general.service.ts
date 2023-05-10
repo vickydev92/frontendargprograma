@@ -9,29 +9,30 @@ export class GeneralService {
  public vistabtn: boolean = false;
  public iniciar: boolean = false;
  public btnLog: boolean =true;
+ public backUrl:string = "http://localhost:8080"
 
   constructor(private http:HttpClient) { }
 
 
 public obtenerInfo(): Observable<any>{
-  return this.http.get("http://localhost:8080/api/personas")
+  return this.http.get(this.backUrl+"/api/personas")
 
 }
 
 public obtenerInfoEdu(): Observable<any>{
-  return this.http.get("http://localhost:8080/api/educacion")
+  return this.http.get(this.backUrl+"/api/educacion")
   
 }
 public obtenerInfoExp(): Observable<any>{
-  return this.http.get("http://localhost:8080/api/experiencia")
+  return this.http.get(this.backUrl+"/api/experiencia")
 
 }
 public obtenerInfoSkills(): Observable<any>{
-  return this.http.get("http://localhost:8080/api/skills")
+  return this.http.get(this.backUrl+"/api/skills")
 
 }
 public obtenerInfoProy(): Observable<any>{
-  return this.http.get("http://localhost:8080/api/proyectos")
+  return this.http.get(this.backUrl+"/api/proyectos")
 
 }
 

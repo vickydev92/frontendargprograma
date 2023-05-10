@@ -14,19 +14,19 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 })
 export class ProyectosComponent {
   private proyectoActualizada = new Subject<void>();
-  proyectoList:any;
+  proyectoList: any;
   public formulario!: FormGroup;
 
-  constructor(public generalService: GeneralService, public formBuilder:FormBuilder, private dataService: DataService, private proyectosService: ProyectosService){
-    
-   
-    
+  constructor(public generalService: GeneralService, public formBuilder: FormBuilder, private dataService: DataService, private proyectosService: ProyectosService) {
+
+
+
   }
-  
 
 
-  
-  ngOnInit(): void{
+
+
+  ngOnInit(): void {
 
     this.formulario = this.formBuilder.group({
       id: ['', [Validators.required]],
@@ -38,90 +38,94 @@ export class ProyectosComponent {
       enlace: ['', [Validators.required]]
 
     });
-      this.dataService.misProyectos$.subscribe(data => {
-        this.proyectoList = data;
-      })
+    this.dataService.misProyectos$.subscribe(data => {
+      this.proyectoList = data;
+    })
 
-      this.proyectoActualizada.subscribe(() => {
-        this.dataService.actualizarMiProyecto(); 
-      })
+    this.proyectoActualizada.subscribe(() => {
+      this.dataService.actualizarMiProyecto();
+    })
 
 
-      const idProyectoSeleccionada=Number(
-        (<HTMLSelectElement>document.getElementById('select-idProy')).value
-      );
-  
-      const proyectoSeleccionada= this.buscarProyectoPorId(
-        idProyectoSeleccionada
-      );
-        if (proyectoSeleccionada) {
-          this.formulario.setValue({
-            id: proyectoSeleccionada.id,
-            imagen:proyectoSeleccionada.imagen,
-            titulo:proyectoSeleccionada.titulo,
-            fechaIni: proyectoSeleccionada.fechaIni,
-            fechaFin: proyectoSeleccionada.fechaFin,
-            descripcion: proyectoSeleccionada.descripcion
-          });
-        }
-  
-    }
-  
-    buscarProyectoPorId(id:number): Proyectos{
-      return this.proyectoList.find((proyecto:Proyectos)=> proyecto.id === id);
-    }
-  
-    mostrarDatos(){
-      const idProyectoSeleccionada=Number(
-        (<HTMLSelectElement> document.getElementById('select-idProy')).value
-      );
-      const proyectoSeleccionada= this.buscarProyectoPorId(
-        idProyectoSeleccionada
-      );
-      if (proyectoSeleccionada) {
-        this.formulario.setValue({
-          id: proyectoSeleccionada.id,
-          imagen:proyectoSeleccionada.imagen,
-          titulo:proyectoSeleccionada.titulo,
-          fechaIni: proyectoSeleccionada.fechaIni,
-          fechaFin: proyectoSeleccionada.fechaFin,
-          descripcion: proyectoSeleccionada.descripcion,
-          enlace:proyectoSeleccionada.enlace
-        });
-      }
+    const idProyectoSeleccionada = Number(
+      (<HTMLSelectElement>document.getElementById('select-idProy')).value
+    );
+
+    const proyectoSeleccionada = this.buscarProyectoPorId(
+      idProyectoSeleccionada
+    );
+    if (proyectoSeleccionada) {
+      this.formulario.setValue({
+        id: proyectoSeleccionada.id,
+        imagen: proyectoSeleccionada.imagen,
+        titulo: proyectoSeleccionada.titulo,
+        fechaIni: proyectoSeleccionada.fechaIni,
+        fechaFin: proyectoSeleccionada.fechaFin,
+        descripcion: proyectoSeleccionada.descripcion
+      });
     }
 
+  }
 
-  editarProyecto(){
+  buscarProyectoPorId(id: number): Proyectos | null {
+    if (this.proyectoList) {
+      return this.proyectoList.find((proyecto: Proyectos) => proyecto.id === id);
+    } else {
+      return null;
+    }
+  }
+
+  mostrarDatos() {
+    const idProyectoSeleccionada = Number(
+      (<HTMLSelectElement>document.getElementById('select-idProy')).value
+    );
+    const proyectoSeleccionada = this.buscarProyectoPorId(
+      idProyectoSeleccionada
+    );
+    if (proyectoSeleccionada) {
+      this.formulario.setValue({
+        id: proyectoSeleccionada.id,
+        imagen: proyectoSeleccionada.imagen,
+        titulo: proyectoSeleccionada.titulo,
+        fechaIni: proyectoSeleccionada.fechaIni,
+        fechaFin: proyectoSeleccionada.fechaFin,
+        descripcion: proyectoSeleccionada.descripcion,
+        enlace: proyectoSeleccionada.enlace
+      });
+    }
+  }
+
+
+  editarProyecto() {
     this.proyectosService.editarProyectos(this.formulario.value.id, this.formulario.value).subscribe(
       (response: Proyectos) => {
         console.log(response);
         this.proyectoList = this.formulario.value;
-        this.proyectoActualizada.next(); 
+        this.proyectoActualizada.next();
         this.formulario.reset();
       }
     )
-  
+
   }
-  
-  eliminarProyecto(){
+
+  eliminarProyecto() {
     const proyectoId = this.formulario.value.id;
     this.proyectosService.eliminarProyecto(proyectoId).subscribe(
       () => {
         this.proyectoActualizada.next(); //Emitir el subject para actualizar los datos
         this.formulario.reset();
       },
-      (error:HttpErrorResponse) => {
+      (error: HttpErrorResponse) => {
         alert(error.message);
       }
     )
   }
-  
-  
-  agregarProyecto(){
-    const proyecto= this.formulario.value;
+
+
+  agregarProyecto() {
+    const proyecto = this.formulario.value;
     this.proyectosService.crearProyecto(proyecto).subscribe(
-      (response:Proyectos) =>{
+      (response: Proyectos) => {
         console.log(response);
         this.proyectoList = proyecto;
         this.proyectoActualizada.next();
@@ -131,6 +135,6 @@ export class ProyectosComponent {
   }
 }
 
-  
+
 
 

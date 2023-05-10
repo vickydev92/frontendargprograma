@@ -15,19 +15,12 @@ export class LoginService {
   
 
   login(formLogin:FormGroup){
-    console.log(formLogin.value);
-
-
-    if 
-    (formLogin.get('email')?.value === "victoria@gmail.com" && formLogin.get('password')?.value === "argentinaprog22")
+    if(formLogin.get('email')?.value === "victoria@gmail.com" && formLogin.get('password')?.value === "argentinaprog22")
     {
       this.generalService.vistabtn = true;
     }else{
       alert("Usuario no registrado");
     } 
-
   }
-
-
 
 }

@@ -186,11 +186,12 @@ h3 {
 }
 
   .modal{
-	background: #1b202d6e;
+	background: #1313136e;
   }
 
   .modal-content{
-	background-color: #4e6260;
+	background-color: rgb(255, 255, 255);
+	color: #1a1a1c;
   }
 
 i{
